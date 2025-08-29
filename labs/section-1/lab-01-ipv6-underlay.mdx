@@ -1,0 +1,122 @@
+---
+title: "Lab 1: IPv6 Underlay Network"
+---
+
+In this lab, you'll bring up a simple IPv6-only spine-leaf network and verify connectivity and routing.
+
+## Goals
+
+- Establish IPv6 link-local connectivity between spine and leaf switches.
+- Configure EBGP unnumbered sessions and exchange routes.
+- Verify ECMP load-balancing and fast failover with BFD.
+
+## Prerequisites
+
+<LabChecklist title="Prerequisites" items={[
+  "Completed Section 1 concepts",
+  "Two leaf and two spine router VMs (or containers) with FRR installed",
+  "Each leaf connected to both spines (virtually or physically)"
+]} />
+
+## Topology
+
+Two spine routers (AS 65010) and two leaf routers (AS 65101 and 65102). Each leaf has two uplinks (to Spine1 and Spine2). All BGP sessions will use IPv6 link-local addresses.
+
+## Step 1: Enable IPv6 on Interfaces
+
+Ensure all spine and leaf inter-switch links have IPv6 link-local addresses. Usually, IPv6 link-local is auto-assigned (`fe80::/64`). Verify on each device:
+```shell
+# On each router, check an uplink interface (example: swp1)
+ip -6 addr show dev swp1
+```
+
+Ensure an fe80::.../64 address is present. If not, assign one manually:
+
+```shell
+ip link set swp1 up
+ip -6 addr add fe80::1/64 dev swp1  # Assign only if missing; typically auto-assigned
+```
+
+## Step 2: Configure BGP on Leaves
+
+On **Leaf1** (AS 65101):
+```FRR
+router bgp 65101
+  neighbor swp1 interface remote-as 65010
+  neighbor swp2 interface remote-as 65010
+  address-family ipv6 unicast
+    neighbor swp1 activate
+    neighbor swp2 activate
+```
+
+On **Leaf2** (AS 65102), use its ASN and similar neighbor statements.
+
+<details>
+<summary><strong>Troubleshooting BGP Peering</strong></summary>
+If BGP sessions do not establish:
+- Check that link-local addresses are reachable: e.g., from Leaf1, `ping6 fe80::1%swp1` (spine1's link-local) [oai_citation:1‡blog.ipspace.net](https://blog.ipspace.net/2022/11/bgp-unnumbered-duct-tape/#:~:text=r1,keepalive%20interval%20is%203%20seconds).
+- Verify ASNs and interface names match on both ends.
+- Use `vtysh -c "show bgp ipv6 summary"` on each router to see neighbor status.
+</details>
+
+## Step 3: Configure BGP on Spines
+
+On **Spine1** (AS 65010):
+```FRR
+router bgp 65010
+  neighbor swp1 interface remote-as 65101
+  neighbor swp2 interface remote-as 65102
+  address-family ipv6 unicast
+    neighbor swp1 activate
+    neighbor swp2 activate
+```
+
+On Spine2, similarly configure neighbors for AS 65101 and 65102.
+
+:::note
+Each neighbor ... interface implicitly uses the link-local address of the neighbor on that interface, so we don’t specify an IP.
+:::
+
+## Step 4: Enable BFD (Fast Failover)
+
+Apply BFD to each EBGP session. First, define a BFD profile on all routers:
+
+```FRR
+bfd
+ profile fast
+  transmit-interval 50
+  receive-interval 50
+  detect-multiplier 3
+```
+
+Then under each BGP neighbor on both spines and leaves:
+
+```FRR
+neighbor swpX interface remote-as Y
+  bfd profile fast
+```
+
+(replace X and Y for each neighbor line).
+
+This configuration ensures that if a link goes down, BFD detects it ~150ms and BGP withdraws routes immediately.
+
+## Step 5: Verification
+
+<LabChecklist title=“Verification” items={[
+“BGP sessions are Established on all routers (check show bgp ipv6 summary)”,
+“Each leaf sees routes to the other leaf’s loopback or LAN prefixes via both spines (ECMP routes present)”,
+“BFD peers show up and in Up state (show bfd peers in FRR CLI)”
+]} />
+
+Now test connectivity:
+- Ping from a host in Leaf1’s network to a host in Leaf2’s network. It should succeed and you can observe (with traceroute) that it goes via one of the spines.
+- Disable the interface on Spine1 connecting to Leaf1 (ifdown swpX or equivalent). BFD should trigger route removal within 150ms. The ping should continue with minimal interruption (traffic now going via Spine2).
+
+## Troubleshooting
+
+:::caution
+If traffic drops during the failover test for more than a packet or two:
+	•	Ensure BFD is running on both sides for each link (check show bfd peers).
+	•	Verify ECMP is working: both spines should be in the routing table of Leaf1 for Leaf2’s prefix (and vice versa).
+	•	Check for any interface errors or mismatches in configurations.
+:::

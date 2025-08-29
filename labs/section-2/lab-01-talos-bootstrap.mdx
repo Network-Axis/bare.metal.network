@@ -1,0 +1,26 @@
+---
+title: "Lab 3: Talos Cluster Automation"
+---
+
+Time to bootstrap our Kubernetes cluster on the L3 fabric.
+
+## Goals
+
+- Deploy a Talos control plane node and a worker node.
+- Integrate the nodes' IPs into the underlay routing.
+- Verify Kubernetes is functional (control plane reachable, nodes Ready).
+
+## Steps
+
+1. **Generate Talos configs:** Use `talosctl gen config` to create `controlplane.yaml` and `worker.yaml` for a cluster (use your cluster VIP and an available IP for init).
+2. **Boot control plane node:** Start the VM or server with Talos image and provide the `controlplane.yaml`. Wait a couple of minutes for it to form the Kubernetes control plane.
+3. **Join worker node:** Boot the worker with `worker.yaml`. It should auto-join the cluster.
+4. **Networking integration:** On the leaf switch, ensure you have routes for the control plane and worker node IPs (if using static routing). If using BGP on the node (optional), check that it peers and announces (this lab assumes static routes for simplicity).
+
+## Verification
+
+- Use `talosctl kubeconfig` on the control plane node to get access to Kubernetes, then `kubectl get nodes` to see both nodes.
+- Ping the Kubernetes API endpoint (the VIP) from your management host to confirm it's reachable via the fabric.
+- Verify the worker node can reach the internet or upstream networks if needed (Talos will have a default route via the leaf if configured).
+
+*Further details and step-by-step guidance to be added.*

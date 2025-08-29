@@ -11,6 +11,22 @@ Create the repository
 npx create-docusaurus@latest bare-metal-networking classic
 ```
 
+Install mermaid
+```
+npm install --save @docusaurus/theme-mermaid
+```
+
+Configure mermaid
+```typescript file=docusaurus.config.js
+export default {
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+};
+```
+
+
 ---
 
 - [Configure Docusaurus to use Cloudflare Workers](https://developers.cloudflare.com/workers/framework-guides/web-apps/more-web-frameworks/docusaurus/) & [Pricing](https://developers.cloudflare.com/workers/platform/pricing/)
