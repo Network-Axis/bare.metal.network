@@ -22,8 +22,8 @@ In this lab, you'll write a basic XDP program and deploy it as a CNF on a node.
 4. **Test throughput**: Run an iperf3 from another host through this node to a service (or even just ping flood it). Observe CPU usage (top) on the node.
 
 ## Verification
-	•	bpftool prog show should list the XDP program attached.
-	•	Packets counter: use bpftool perf or add a map counter to count drops, and see that it increments.
-	•	Throughput comparison: Remove the XDP program (bpftool prog detach dev `<iface>` xdp) and rerun iperf – you should see lower CPU usage but of course traffic passes normally. With XDP drop, the throughput as seen by iperf will be zero (all dropped) but the node should handle it without high CPU, demonstrating efficiency.
+- bpftool prog show should list the XDP program attached.
+- Packets counter: use bpftool perf or add a map counter to count drops, and see that it increments.
+- Throughput comparison: Remove the XDP program (bpftool prog detach dev `<iface>` xdp) and rerun iperf – you should see lower CPU usage but of course traffic passes normally. With XDP drop, the throughput as seen by iperf will be zero (all dropped) but the node should handle it without high CPU, demonstrating efficiency.
 
 Detailed step-by-step and example outputs will be added soon.

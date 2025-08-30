@@ -19,14 +19,14 @@ ipv6:
 This config disables VXLAN and tells Cilium that Pod IPs are routable.
 
 On each node, Cilium will program the Linux kernel to route Pod IPs via that node’s interface. We ensure our fabric’s routing knows how to reach those Pod subnets:
-	•	One approach: assign each node a unique IPv6 Pod subnet and use BGP to advertise those routes from the node.
-	•	Simpler: use a cluster-wide unique prefix and static routes on the spines to each node (not very scalable, but fine for a lab).
+- One approach: assign each node a unique IPv6 Pod subnet and use BGP to advertise those routes from the node.
+- Simpler: use a cluster-wide unique prefix and static routes on the spines to each node (not very scalable, but fine for a lab).
 
 ## BGP Advertisement (Optional)
 
 Cilium has an optional BGP addon (beta) that can announce Pod or Service IPs to physical routers. In a production-grade design, we’d enable Cilium’s BGP control plane:
-	•	Each node’s Cilium agent establishes BGP sessions with the fabric (for instance, the leaf it’s connected to).
-	•	The node advertises the Pod CIDR it hosts, allowing the spines/leaves to forward traffic directly to that node for any destination Pod.
+- Each node’s Cilium agent establishes BGP sessions with the fabric (for instance, the leaf it’s connected to).
+- The node advertises the Pod CIDR it hosts, allowing the spines/leaves to forward traffic directly to that node for any destination Pod.
 
 This keeps traffic optimal: no unnecessary hops or encap/decap.
 
