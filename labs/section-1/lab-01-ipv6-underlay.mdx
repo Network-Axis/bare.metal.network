@@ -102,10 +102,10 @@ This configuration ensures that if a link goes down, BFD detects it ~150ms and B
 
 ## Step 5: Verification
 
-<LabChecklist title=“Verification” items={[
-“BGP sessions are Established on all routers (check show bgp ipv6 summary)”,
-“Each leaf sees routes to the other leaf’s loopback or LAN prefixes via both spines (ECMP routes present)”,
-“BFD peers show up and in Up state (show bfd peers in FRR CLI)”
+<LabChecklist title="Verification" items={[
+"BGP sessions are Established on all routers (check show bgp ipv6 summary)",
+"Each leaf sees routes to the other leaf’s loopback or LAN prefixes via both spines (ECMP routes present)",
+"BFD peers show up and in Up state (show bfd peers in FRR CLI)"
 ]} />
 
 Now test connectivity:

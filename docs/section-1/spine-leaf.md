@@ -27,7 +27,7 @@ flowchart TB
 Each EBGP session is bound to an interface rather than an IP. In FRRouting (FRR), the configuration uses the interface name in place of neighbor IP (e.g. neighbor swp1 interface remote-as 65002). We’ll explore this configuration in the lab.
 
 :::note
-Layer-3 vs. Layer-2: A “pure L3” fabric routes packets using IP addresses (Layer 3 of OSI), as opposed to switching frames by MAC (Layer 2). Eliminating Layer-2 domains in the core network improves stability and makes failover behavior more deterministic.
+Layer-3 vs. Layer-2: A "pure L3" fabric routes packets using IP addresses (Layer 3 of OSI), as opposed to switching frames by MAC (Layer 2). Eliminating Layer-2 domains in the core network improves stability and makes failover behavior more deterministic.
 :::
 
 With the physical topology and addressing covered, you’re ready to see how unnumbered BGP and BFD deliver fast convergence. Next, we’ll detail unnumbered BGP setup and the sub-50ms failover mechanics.

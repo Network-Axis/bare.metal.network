@@ -34,7 +34,7 @@ We can then load this program into the kernel (e.g., `sudo bpftool prog load xdp
 
 To treat eBPF programs as CNFs, we package them into containers or operators:
 	•	One approach: build a container that on startup loads the eBPF program into the kernel and attaches it. This container might also expose an API or metrics endpoint for control.
-	•	For instance, a “Firewall CNF” container could load an XDP program to drop certain traffic, and use a map that can be updated via a REST API in the container.
+	•	For instance, a "Firewall CNF" container could load an XDP program to drop certain traffic, and use a map that can be updated via a REST API in the container.
 	•	In Kubernetes, you’d deploy this container as a DaemonSet (to run on every node) or as a Pod on a specific node where needed.
 
 Our toolkit netkit can help orchestrate these CNFs, but at its core, it often comes down to loading eBPF objects and managing their lifecycle.

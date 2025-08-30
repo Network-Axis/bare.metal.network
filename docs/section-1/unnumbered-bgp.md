@@ -41,7 +41,7 @@ router bgp 65001
     bfd profile fast
 ```
 
-Here we’ve defined a BFD profile named “fast” that sends packets every 50ms. With a detect multiplier of 3, a neighbor failure is detected in 150ms or less. BGP is linked to this BFD profile for each neighbor interface. If BFD reports the link down, BGP withdraws routes almost immediately, triggering failover to remaining paths.
+Here we’ve defined a BFD profile named "fast" that sends packets every 50ms. With a detect multiplier of 3, a neighbor failure is detected in 150ms or less. BGP is linked to this BFD profile for each neighbor interface. If BFD reports the link down, BGP withdraws routes almost immediately, triggering failover to remaining paths.
 
 :::caution
 Be careful using very aggressive BFD timers. Ensure your network devices and links can handle the load. 50ms BFD on dozens of neighbors can tax CPU on smaller devices. Always test stability when tuning BFD for fast failover.

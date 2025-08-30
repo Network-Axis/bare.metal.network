@@ -40,7 +40,7 @@ Additionally, Hubble (Cilium’s observability layer) gives us visibility into f
 hubble observe --last 10 --pod default/web
 ```
 
-This would show the last 10 flows involving the pod “web” in default namespace – useful to verify that traffic is taking the expected routed path across our fabric.
+This would show the last 10 flows involving the pod "web" in default namespace – useful to verify that traffic is taking the expected routed path across our fabric.
 
 :::tip
 If you’re curious about Cilium’s internals, use cilium status to check health and cilium bpf route list to see routes Cilium has programmed. You’ll notice entries mapping Pod CIDRs to underlay interfaces.

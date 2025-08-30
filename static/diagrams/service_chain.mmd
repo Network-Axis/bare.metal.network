@@ -1,0 +1,5 @@
+flowchart LR
+    User --> Ingress["Ingress Node\nXDP Firewall"]
+    Ingress --> LB["Load Balancer\n(tc eBPF)"]
+    LB --> Monitor["Observer\n(tc eBPF)"]
+    Monitor --> Service["Service Pod"]

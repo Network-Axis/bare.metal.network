@@ -2,6 +2,10 @@
   "name": "bare-metal-networking",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0"
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -12,17 +16,24 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
-		"preview": "npm run build && wrangler dev"
+    "typecheck": "tsc --noEmit",
+		"preview": "npm run build && wrangler dev",
+    "lint": "eslint . --ext .ts,.tsx,.md,.mdx",
+    "format": "prettier --write .",
+    "link-check": "docusaurus build --no-minify",
+    "test": "node --test -v"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.1",
     "@docusaurus/preset-classic": "3.8.1",
+    "@docusaurus/theme-mermaid": "^3.8.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "dotenv": "^17.2.1",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "remark-validate-links": "^13.1.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.8.1",
@@ -42,8 +53,5 @@
       "last 3 firefox version",
       "last 5 safari version"
     ]
-  },
-  "engines": {
-    "node": ">=24.0"
   }
 }
