@@ -1,0 +1,13 @@
+graph TB
+    subgraph Spine Switches
+       Spine1
+       Spine2
+    end
+    subgraph Leaf Switches
+       Leaf1
+       Leaf2
+    end
+    Spine1 --> Leaf1
+    Spine1 --> Leaf2
+    Spine2 --> Leaf1
+    Spine2 --> Leaf2
