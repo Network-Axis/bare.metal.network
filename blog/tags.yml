@@ -1,19 +1,12 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
-
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+ebpf:
+  label: eBPF
+  permalink: /ebpf
+  description: Kernel development
+announcement:
+  label: Announcement
+  permalink: /announcement
+  description: Posts that inform readers of the progress that has been made on the course.
+changelog:
+  label: Changelog
+  permalink: /changelog
+  description: Posts that inform readers of what had been added, removed, or updated regarding the course content.
