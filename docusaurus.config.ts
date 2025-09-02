@@ -27,7 +27,7 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/blog/'
+          editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
