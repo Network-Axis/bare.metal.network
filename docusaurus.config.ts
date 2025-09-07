@@ -74,15 +74,17 @@ const config: Config = {
       title: 'Bare Metal Networking for Private Clouds',
       items: [
         { to: '/docs/intro', label: 'Overview', position: 'left' },
+        { to: "/table-of-contents", label: "Table of Contents ", position: "left" },
         {
           label: 'Curriculum',
           position: 'left',
           items: [
-            { to: '/docs/section-1/spine-leaf', label: 'Section 1' },
-            { to: '/docs/section-2/talos-bootstrap', label: 'Section 2' },
-            { to: '/docs/section-3/ebpf-basics', label: 'Section 3' },
+            { to: '/docs/section-1/', label: 'Section 1: Pure L3 Data Center' },
+            { to: '/docs/section-2/', label: 'Section 2: Cloud-Native Router' },
+            { to: '/docs/section-3/', label: 'Section 3: eBPF Networking' },
             { to: '/docs/service-chains', label: 'Service Chains' },
             { to: '/docs/foundations', label: 'Foundations' }
+
           ]
         },
         {
