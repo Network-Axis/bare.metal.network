@@ -73,18 +73,14 @@ const config: Config = {
     navbar: {
       title: 'Bare Metal Networking for Private Clouds',
       items: [
-        { to: '/docs/intro', label: 'Overview', position: 'left' },
-        { to: "/table-of-contents", label: "Table of Contents ", position: "left" },
         {
           label: 'Curriculum',
           position: 'left',
           items: [
+            { to: '/docs/intro', label: 'Overview'},
             { to: '/docs/section-1/', label: 'Section 1: Pure L3 Data Center' },
             { to: '/docs/section-2/', label: 'Section 2: Cloud-Native Router' },
             { to: '/docs/section-3/', label: 'Section 3: eBPF Networking' },
-            { to: '/docs/service-chains', label: 'Service Chains' },
-            { to: '/docs/foundations', label: 'Foundations' }
-
           ]
         },
         { to: '/blog', label: 'Blog', position: 'left' },
