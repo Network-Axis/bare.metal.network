@@ -87,27 +87,6 @@ const config: Config = {
 
           ]
         },
-        {
-          label: 'Labs',
-          position: 'left',
-          items: [
-            { to: '/labs/section-1/lab-01-ipv6-underlay', label: 'Section 1 Labs' },
-            { to: '/labs/section-2/lab-01-talos-bootstrap', label: 'Section 2 Labs' },
-            { to: '/labs/section-3/lab-01-xdp-intro', label: 'Section 3 Labs' },
-            { to: '/labs/chains/lab-01-basic-chain', label: 'Chain Labs' }
-          ]
-        },
-        {
-          label: 'Reference',
-          position: 'left',
-          items: [
-            { to: '/reference/config-templates', label: 'Config Templates' },
-            { to: '/reference/cli', label: 'CLI' },
-            { to: '/reference/diagrams', label: 'Diagrams' },
-            { to: '/reference/glossary', label: 'Glossary' },
-            { to: '/reference/rfcs', label: 'RFCs' }
-          ]
-        },
         { to: '/blog', label: 'Blog', position: 'left' },
         { to: '/enroll', label: 'Enroll', position: 'right', className: 'navbar-item--button' }
       ]
