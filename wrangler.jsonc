@@ -12,10 +12,11 @@
 	"observability": {
 		"enabled": true
 	},
+	"preview_urls": true,
 	"routes": [
 		{
-		  "pattern": "ebpf.guide",
-		  "custom_domain": true
+			"pattern": "ebpf.guide",
+			"custom_domain": true
 		},
 		{
 			"pattern": "www.ebpf.guide",

@@ -73,37 +73,14 @@ const config: Config = {
     navbar: {
       title: 'Bare Metal Networking for Private Clouds',
       items: [
-        { to: '/docs/intro', label: 'Overview', position: 'left' },
         {
           label: 'Curriculum',
           position: 'left',
           items: [
-            { to: '/docs/section-1/spine-leaf', label: 'Section 1' },
-            { to: '/docs/section-2/talos-bootstrap', label: 'Section 2' },
-            { to: '/docs/section-3/ebpf-basics', label: 'Section 3' },
-            { to: '/docs/service-chains', label: 'Service Chains' },
-            { to: '/docs/foundations', label: 'Foundations' }
-          ]
-        },
-        {
-          label: 'Labs',
-          position: 'left',
-          items: [
-            { to: '/labs/section-1/lab-01-ipv6-underlay', label: 'Section 1 Labs' },
-            { to: '/labs/section-2/lab-01-talos-bootstrap', label: 'Section 2 Labs' },
-            { to: '/labs/section-3/lab-01-xdp-intro', label: 'Section 3 Labs' },
-            { to: '/labs/chains/lab-01-basic-chain', label: 'Chain Labs' }
-          ]
-        },
-        {
-          label: 'Reference',
-          position: 'left',
-          items: [
-            { to: '/reference/config-templates', label: 'Config Templates' },
-            { to: '/reference/cli', label: 'CLI' },
-            { to: '/reference/diagrams', label: 'Diagrams' },
-            { to: '/reference/glossary', label: 'Glossary' },
-            { to: '/reference/rfcs', label: 'RFCs' }
+            { to: '/docs/intro', label: 'Overview'},
+            { to: '/docs/section-1/', label: 'Section 1: Pure L3 Data Center' },
+            { to: '/docs/section-2/', label: 'Section 2: Cloud-Native Router' },
+            { to: '/docs/section-3/', label: 'Section 3: eBPF Networking' },
           ]
         },
         { to: '/blog', label: 'Blog', position: 'left' },

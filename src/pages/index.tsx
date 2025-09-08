@@ -50,7 +50,7 @@ function Homepage(): JSX.Element {
           <div className="row">
             <ModuleCard title="Section 1: Pure L3 Data Center" description="Design a spine-leaf IPv6 fabric with unnumbered BGP, ECMP, and <50ms failover." />
             <ModuleCard title="Section 2: Cloud-Native Router" description="Bootstrap a Talos & Kubernetes cluster, integrate it with the L3 fabric using Cilium." />
-            <ModuleCard title="Section 3: eBPF Networking" description="Develop eBPF-based network functions and achieve kernel-level performance." />
+            <ModuleCard title="Section 3: Networking with eBPF" description="Develop eBPF-based network functions and achieve kernel-level performance." />
           </div>
           <div className="row margin-top--md">
             <ModuleCard title="Service Chains" description="Chain multiple eBPF network functions (CNFs) into service pipelines with full observability." />
