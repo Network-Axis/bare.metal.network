@@ -77,10 +77,10 @@ const config: Config = {
           label: 'Curriculum',
           position: 'left',
           items: [
-            { to: '/docs/intro', label: 'Overview'},
+            { to: '/docs/intro', label: 'Overview' },
             { to: '/docs/section-1/', label: 'Section 1: Pure L3 Data Center' },
             { to: '/docs/section-2/', label: 'Section 2: Cloud-Native Router' },
-            { to: '/docs/section-3/', label: 'Section 3: eBPF Networking' },
+            { to: '/docs/section-3/', label: 'Section 3: Networking with eBPF' },
           ]
         },
         { to: '/blog', label: 'Blog', position: 'left' },
@@ -105,7 +105,6 @@ const config: Config = {
             { label: 'Docs', to: '/docs/intro' },
             { label: 'Labs', to: '/labs/section-1/lab-01-ipv6-underlay' },
             { label: 'Blog', to: '/blog' },
-            { label: 'FAQ', to: '/#faq' }
           ]
         },
         {
