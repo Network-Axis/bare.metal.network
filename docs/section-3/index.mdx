@@ -3,6 +3,15 @@ title: "Section 3: Networking with eBPF"
 description: "Develop eBPF-based network functions and achieve kernel-level performance."
 ---
 
+In this section, we will develop eBPF-based network functions and achieve kernel-level performance.
+
+> Write, build, and deploy eBPF programs that intercept and manipulate network packets at scale, with a focus on efficiency, performance, and security.
+> These eBPF programs will be Cloud-native Network Functions.
+
+1. **Set up an eBPF Development Environment**: Describe the tooling required to build eBPF applications, e.g. `libbpf`, `bpftool`, `LLVM Clang`, `Linux headers`, and explain what role they play.
+2. **Write an eBPF Program using Restricted C and Go**: Discuss advantages and limitations of using C for kernel-space program and Go for user-space application.
+3. **Best practices for eBPF application development** (e.g. Compile Once Run Everywhere (CO-RE)).
+4. **Service Function Chaining**: Discuss how netkit replaces traditional veth/tc datapaths with a BPF-programmable network device, allowing for host-native packet processing speeds.
 
 We will explain each line at great length, covering:
 	- Learn how to Read, Write, Build (Cross Compile), and Containerize eBPF programs.
@@ -11,7 +20,6 @@ We will explain each line at great length, covering:
 
 We'll cover the Program Types, Map Types, and Kernel Hooks that are relevant to our eBPF program. We'll also address tradeoffs, in ADR fashion, so you know why certain decisions were made in lieu of other options.
 	- We will also point to other references (official docs, etc.) if course participants want to dive deeper into alternative types and options.
-
 
 import DocCardList from '@theme/DocCardList';
 

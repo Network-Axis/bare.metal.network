@@ -7,7 +7,7 @@ sidebar_position: 1
 Welcome to **Bare Metal Networking for Private Clouds**!
 In this course, you'll learn to design and deploy a modern data center network from the ground up.
 
-The material is organized into three main sections that cover <ins>*networking*</ins>, <ins>*infrastructure*</ins>, and <ins>*software*</ins>:
+The course is structured into three main sections that cover <ins>*networking*</ins>, <ins>*infrastructure*</ins>, and <ins>*software*</ins>:
 - **Section 1: Scalable Data Center (Pure L3 Networking):** Build a Layer 3 spine-leaf underlay using IPv6 link-local addressing, unnumbered BGP sessions, ECMP routing, and sub-50ms failover with BFD.
 - **Section 2: Cloud-Native Router (Talos + Cilium):** Automate Kubernetes cluster provisioning with Talos Linux and integrate Cilium to align pod networking with the L3 fabric.
 - **Section 3: Networking with eBPF:** Write eBPF programs to create Cloud-Native Network Functions (CNFs) and chain them into service pipelines with *netkit*, achieving NIC-level performance.

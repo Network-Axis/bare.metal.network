@@ -1,0 +1,22 @@
+---
+title: "Section 1: Pure L3 Data Center"
+description: "Design a spine-leaf IPv6 fabric with unnumbered BGP, ECMP, and <50ms failover."
+---
+
+In this section, we will design a spine-leaf IPv6 fabric with unnumbered BGP, ECMP, BFD.
+
+> Discuss the protocols and topology of the underlying network to build a .
+1. **How the Data Center has evolved, and how to make it scale**: Discuss Pure Layer 3 Underlay and how BFD is used for sub-second link failover to meet high availability SLAs
+    - IPv6 is used for easy management of IP addresses. Using Neighbor Discovery Protocol and Link-Local Addresses, we can achieve Route Advertisement without any configuration.
+    - Spine and Leaf Topology is used to avoid the overhead of Layer 2 networking.
+	- Border Gateway Protocol (BGP) is used for load balancing and advertising routes to all servers, routers, and switches. In terms of scalability, BGP is currently handling ~700,000 routes of the public internet. BGP can use link-local addresses to exchange information about IP addresses configured in a data center.
+	- BIG TCP: Extends TCP's window-scaling and congestion control, improving performance and throughput as packets enter the networking stack.
+	- BBRv3 is used for
+	- Stateless Address Autoconfiguration is used for
+2. Case Study - Nokia Kubernetes Service
+
+
+import DocCardList from '@theme/DocCardList';
+
+{/* Shows the same child cards you'd get from a generated-index */}
+<DocCardList />
