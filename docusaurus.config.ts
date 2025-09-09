@@ -94,7 +94,7 @@ const config: Config = {
           title: 'Product',
           items: [
             { label: 'Home', to: '/' },
-            { label: 'Curriculum', to: '/docs/intro' },
+            { label: 'Curriculum', to: '/docs/overview' },
             { label: 'Pricing', to: '/enroll' },
             { label: 'Changelog', to: '/blog' }
           ]
@@ -102,7 +102,7 @@ const config: Config = {
         {
           title: 'Learn',
           items: [
-            { label: 'Docs', to: '/docs/intro' },
+            { label: 'Docs', to: '/docs/overview' },
             { label: 'Labs', to: '/labs/section-1/lab-01-ipv6-underlay' },
             { label: 'Blog', to: '/blog' },
           ]
