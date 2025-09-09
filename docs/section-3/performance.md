@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 # Building and Deploying eBPF CNFs (Performance & Observability)
 
 Now that we know what eBPF can do, let's discuss how to build a Cloud-Native Network Function (CNF) using eBPF and ensure it performs at scale.
