@@ -1,9 +1,7 @@
 {
-  "label": "Section 3: Networking with eBPF",
   "position": 3,
   "link": {
-    "type": "generated-index",
-    "slug": "section-3",
-    "description": "Develop eBPF-based network functions and achieve kernel-level performance."
+    "type": "doc",
+    "id": "section-3/index"
   }
 }
