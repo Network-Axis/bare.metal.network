@@ -77,7 +77,7 @@ const config: Config = {
           label: 'Curriculum',
           position: 'left',
           items: [
-            { to: '/docs/intro', label: 'Overview' },
+            { to: '/docs/overview', label: 'Overview' },
             { to: '/docs/section-1/', label: 'Section 1: Pure L3 Data Center' },
             { to: '/docs/section-2/', label: 'Section 2: Cloud-Native Router' },
             { to: '/docs/section-3/', label: 'Section 3: Networking with eBPF' },
