@@ -27,7 +27,14 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/'
+          editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/',
+          feedOptions: {
+            type: 'all',
+            title: 'Bare Metal Networking for Private Clouds',
+            description: 'Announcements and changelog related to the course',
+            copyright: `© ${new Date().getFullYear()} Network Axis`,
+            xslt: true
+          }
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
