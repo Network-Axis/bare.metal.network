@@ -9,9 +9,15 @@ In this section, we will develop eBPF-based network functions and achieve kernel
 > These eBPF programs will be Cloud-native Network Functions.
 
 1. **Set up an eBPF Development Environment**: Describe the tooling required to build eBPF applications, e.g. `libbpf`, `bpftool`, `LLVM Clang`, `Linux headers`, and explain what role they play.
-2. **Write an eBPF Program using Restricted C and Go**: Discuss advantages and limitations of using C for kernel-space program and Go for user-space application.
-3. **Best practices for eBPF application development** (e.g. Compile Once Run Everywhere (CO-RE)).
-4. **Service Function Chaining**: Discuss how netkit replaces traditional veth/tc datapaths with a BPF-programmable network device, allowing for host-native packet processing speeds.
+1. **ADR**: Discuss advantages and limitations of using C for kernel-space program and Go for user-space application.
+1. **Write an eBPF Program using Restricted C (Kernel Space)**
+1. **Write an eBPF Application using and Go (User Space)**
+1. **Build an eBPF Program**
+1. **Deploy an eBPF Program**
+1. **Best practices for eBPF application development**
+	- Compile Once Run Everywhere (CO-RE)
+	- [X-Factor CNFs](https://x.cnf.dev/)
+1. **Service Function Chaining**: Discuss how netkit replaces traditional veth/tc datapaths with a BPF-programmable network device, allowing for host-native packet processing speeds.
 
 We will explain each line at great length, covering:
 	- Learn how to Read, Write, Build (Cross Compile), and Containerize eBPF programs.
