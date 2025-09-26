@@ -60,10 +60,9 @@ function Homepage(): JSX.Element {
         <section className="container margin-top--xl">
           <h2 className="text--center">Course Highlights</h2>
           <ul>
-            <li><strong>Full Packet Path Control:</strong> Master routing from physical underlay to Kubernetes overlay, with eBPF hooking in between.</li>
-            <li><strong>Predictable Failover:</strong> Achieve failover within 50ms using BFD and multipath routing – minimizing downtime.</li>
-            <li><strong>Line-Rate Performance:</strong> Utilize eBPF to run network functions at NIC-native speeds, handling millions of packets per second.</li>
-            <li><strong>Hands-On Learning:</strong> Every module includes labs where you break and fix the network, forging real troubleshooting skills.</li>
+            <li><strong>Design, implement and maintain highly redundant and scalable networks.</strong></li>
+            <li><strong>Automate infrastructure provisioning with a focus on efficiency, performance, and security.</strong></li>
+            <li><strong>Write, build, and deploy <a href="https://ebpf.io" target="_blank" rel="noopener noreferrer">eBPF</a> programs that intercept and manipulate network packets at scale.</strong></li>
           </ul>
         </section>
         <section className="container margin-top--lg margin-bottom--xl">
