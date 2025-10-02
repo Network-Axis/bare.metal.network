@@ -5,6 +5,7 @@ tags: [netkit]
 keywords: [netkit]
 description: Understand the fundamentals of netkit, the BPF-programmable network device.
 sidebar_position: 1
+draft: true
 ---
 
 netkit is a virtual device that reduces the amount of times a packet traverses the Linux network stack.

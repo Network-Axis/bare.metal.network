@@ -1,3 +1,8 @@
+---
+authors: [cassamajor]
+draft: true
+---
+
 # BGP Unnumbered and Fast Failover (BFD)
 
 Continuing our pure L3 design, we use BGP between all spine-leaf pairs *without assigning any IP addresses to interfaces*. This is accomplished with **BGP Unnumbered**, where neighbors are identified by interface name and IPv6 link-local address.
