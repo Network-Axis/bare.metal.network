@@ -1,0 +1,243 @@
+/* src/theme/CodeBlock/styles.module.css */
+.terminal {
+   background-color: #f6f8fa;
+   border-radius: 10px;
+   margin: 1rem 0;
+   overflow: hidden;
+   position: relative;
+   border: none;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.terminalHeader {
+   background-color: #323232;
+   padding: 5px 16px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   position: relative;
+   z-index: 2;
+}
+
+.terminalControls {
+   display: flex;
+   gap: 8px;
+}
+
+.terminalButton {
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+}
+
+.terminalButton:nth-child(1) {
+   background-color: #ff5f56;
+}
+
+.terminalButton:nth-child(2) {
+   background-color: #ffbd2e;
+}
+
+.terminalButton:nth-child(3) {
+   background-color: #27c93f;
+}
+
+.copyButton {
+   background-color: transparent;
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   border-radius: 6px;
+   color: #fff;
+   cursor: pointer;
+   padding: 6px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0.7;
+   transition: all 0.2s ease;
+   margin-left: auto;
+}
+
+.copyButton:hover {
+   opacity: 1;
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.terminalBody {
+   padding: 16px 16px 2px 15px;
+   position: relative;
+   background-color: #f6f8fa;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   color: #24292e;
+}
+
+.commandLine {
+   position: relative;
+   display: flex;
+   align-items: center;
+   min-height: 24px;
+   padding: 2px 0;
+}
+
+.commandHighlighted {
+   background-color: #dde4ee;
+   display: block;
+   border-radius: 6px;
+   padding: 2px 4px;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.inlineCopyButton {
+   background-color: transparent;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: 6px;
+   color: #24292e;
+   cursor: pointer;
+   padding: 4px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0.7;
+   transition: all 0.2s ease;
+   margin-left: 10px;
+}
+
+.inlineCopyButton:hover {
+   opacity: 1;
+   background-color: rgba(0, 0, 0, 0.05);
+}
+
+.inlineCopyButton svg {
+   width: 16px;
+   height: 16px;
+   transition: all 0.2s ease;
+}
+
+.inlineCopyButton[data-copied="true"] {
+   color: #27c93f;
+   border-color: #27c93f;
+}
+
+.copyButton[data-copied="true"] {
+   color: #27c93f;
+   border-color: #27c93f;
+}
+
+/* Override any Docusaurus default styles that might add borders */
+.terminal :global(.theme-code-block),
+.terminal :global(pre),
+.terminalBody :global(.theme-code-block) {
+   border: none !important;
+   background-color: transparent !important;
+   color: #24292e !important;
+}
+
+.terminalBody :global(pre) {
+   margin: 0;
+   padding: 0;
+}
+
+.terminalBody :global(code) {
+   color: #24292e !important;
+   background-color: transparent !important;
+}
+
+.enhancedPre {
+   margin: 0 !important;
+   padding: 0 !important;
+   background: transparent !important;
+   font-family: var(--ifm-font-family-monospace);
+   font-size: var(--ifm-code-font-size);
+}
+
+/* Custom styles for commands and comments */
+.commandLine .command {
+   color: #0366d6; /* Blue for commands */
+}
+
+.commandLine .comment {
+   color: #6a737d; /* Gray for comments */
+}
+
+.commandLine .prompt {
+   color: #24292e; /* Black for the $ prompt */
+   margin-right: 8px;
+}
+
+.commandLine .text {
+   color: #24292e; /* Default text color */
+}
+
+/* Styles for common commands */
+.commandLine .commonCommand {
+   color: #22863a; /* Green for common commands */
+}
+
+/* Dark mode styles */
+[data-theme='dark'] .terminal {
+   background-color: #1e1e1e;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .terminalHeader {
+   background-color: #404040;
+}
+
+[data-theme='dark'] .terminalBody {
+   background-color: #1e1e1e;
+   color: #e1e4e8;
+}
+
+[data-theme='dark'] .copyButton {
+   border-color: rgba(255, 255, 255, 0.2);
+   color: #e1e4e8;
+}
+
+[data-theme='dark'] .copyButton:hover {
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .inlineCopyButton {
+   border-color: rgba(255, 255, 255, 0.2);
+   color: #e1e4e8;
+}
+
+[data-theme='dark'] .inlineCopyButton:hover {
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .commandHighlighted {
+   background-color: #2f3349;
+}
+
+[data-theme='dark'] .commandLine .command {
+   color: #79b8ff;
+}
+
+[data-theme='dark'] .commandLine .comment {
+   color: #959da5;
+}
+
+[data-theme='dark'] .commandLine .prompt {
+   color: #e1e4e8;
+}
+
+[data-theme='dark'] .commandLine .text {
+   color: #e1e4e8;
+}
+
+[data-theme='dark'] .commandLine .commonCommand {
+   color: #85e89d;
+}
+
+[data-theme='dark'] .terminal :global(.theme-code-block),
+[data-theme='dark'] .terminal :global(pre),
+[data-theme='dark'] .terminalBody :global(.theme-code-block) {
+   color: #e1e4e8 !important;
+}
+
+[data-theme='dark'] .terminalBody :global(code) {
+   color: #e1e4e8 !important;
+}
