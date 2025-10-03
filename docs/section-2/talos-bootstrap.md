@@ -1,3 +1,8 @@
+---
+authors: [cassamajor]
+draft: true
+---
+
 # Bootstrapping a Talos Kubernetes Cluster
 
 Talos is a container-optimized Linux distribution designed to securely run Kubernetes control plane and worker nodes. It has an immutable, minimal OS image and is managed entirely via an API (no SSH). In this section, we'll see how to bootstrap a Talos cluster for our network.

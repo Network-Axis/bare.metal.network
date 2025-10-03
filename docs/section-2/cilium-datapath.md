@@ -1,3 +1,9 @@
+---
+authors: [cassamajor]
+draft: true
+---
+
+
 # Integrating Cilium with the Underlay Network
 
 With our Talos cluster up, we need to ensure Pod and Service networking mesh seamlessly with the data center underlay (the pure L3 fabric). **Cilium** is a powerful Container Network Interface (CNI) that uses eBPF for routing, network policy, and more. We'll leverage Cilium to align Kubernetes networking with our IPv6 fabric.

@@ -1,3 +1,8 @@
+---
+authors: [cassamajor]
+draft: true
+---
+
 # Spine-Leaf Underlay (IPv6 Link-Local)
 
 Modern data centers use a *spine-leaf* topology for predictable, scalable L3 networking. Every leaf switch connects to each spine, ensuring at most one hop between any server. This fabric is purely Layer-3: no spanning tree, no VLANs across the fabric – just IP routing.
