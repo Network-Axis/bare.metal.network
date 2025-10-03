@@ -56,7 +56,7 @@ function HomepageHeader() {
             <div className={clsx(styles.heroButtons, isVisible && 'cnoe-animate-fade-in-up')}>
               <Link
                 className={clsx("button button--secondary button--lg", styles.heroButton)}
-                to="/docs/overview/cnoe"
+                to="/docs"
                 style={{ animationDelay: '0.6s' }}>
                 <svg
                   width="1.2em"
