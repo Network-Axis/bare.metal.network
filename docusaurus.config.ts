@@ -29,6 +29,10 @@ const config: Config = {
     locales: ['en'],
   },
 
+  stylesheets: [
+    "https://fonts.googleapis.com/icon?family=Material+Icons",
+  ],
+
   presets: [
     [
       'classic',
@@ -110,6 +114,7 @@ const config: Config = {
     },
     colorMode: {
       defaultMode: 'dark',
+      disableSwitch: true,
       respectPrefersColorScheme: false
     },
   } satisfies Preset.ThemeConfig,
