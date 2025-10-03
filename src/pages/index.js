@@ -71,7 +71,7 @@ function HomepageHeader() {
               </Link>
               <Link
                 className={clsx("button button--primary button--lg", styles.heroButton, styles.getStartedButton)}
-                to="/docs/reference-implementation/local"
+                to="/docs"
                 style={{ animationDelay: '0.7s' }}>
                 <svg
                   width="1.2em"
@@ -86,7 +86,7 @@ function HomepageHeader() {
               </Link>
               <Link
                 className={clsx("button button--secondary button--lg", styles.heroButton)}
-                to="/docs/contributing/aws-ref-impl-CONTRIBUTING"
+                to="/docs"
                 style={{ animationDelay: '0.8s' }}>
                 <svg
                   width="1.2em"
