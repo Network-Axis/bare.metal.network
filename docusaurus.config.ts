@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Bare Metal Networking for Private Clouds',
   tagline: 'Design a pure L3 IPv6 fabric, automate Talos + Kubernetes, and ship eBPF CNFs with netkit',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -74,12 +74,12 @@ const config: Config = {
   
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.svg',
     navbar: {
       title: 'Bare Metal Networking for Private Clouds',
       logo: {
         alt: 'BMK8s',
-        src: 'img/logo.png',
+        src: 'img/logo.svg',
       },
       items: [
         { to: '/docs', label: 'Curriculum', position: 'left' },

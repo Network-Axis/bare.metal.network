@@ -143,7 +143,7 @@
   --ifm-color-search-radar-border: lightgray;
   --ifm-color-search-radar-border-hover: #3c6ead;
 
-  --ifm-image-portal: url("../../static/img/logo.png");
+  --ifm-image-portal: url("/img/logo.svg");
 }
 
 /* Dark Theme - Enhanced with CNOE Color System */
@@ -221,7 +221,7 @@
   --ifm-color-search-radar-border: lightgray;
   --ifm-color-search-radar-border-hover: #3c6ead;
 
-  --ifm-image-portal: url("../../static/img/logo.png");
+  --ifm-image-portal: url("/img/logo.svg");
 }
 
 /* Base Animation Utilities */
