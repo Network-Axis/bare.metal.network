@@ -83,14 +83,9 @@ const config: Config = {
         {
           label: 'Curriculum',
           position: 'left',
-          items: [
-            { to: '/docs/overview', label: 'Overview' },
-            { to: '/docs/section-1/', label: 'Section 1: Pure L3 Data Center' },
-            { to: '/docs/section-2/', label: 'Section 2: Cloud-Native Router' },
-            { to: '/docs/section-3/', label: 'Section 3: Networking with eBPF' },
-          ]
+          to: '/docs'
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/blog', label: 'Announcements', position: 'left' },
         { to: '/enroll', label: 'Enroll', position: 'right', className: 'navbar-item--button' }
       ]
     },
@@ -101,7 +96,7 @@ const config: Config = {
           title: 'Product',
           items: [
             { label: 'Home', to: '/' },
-            { label: 'Curriculum', to: '/docs/overview' },
+            { label: 'Curriculum', to: '/docs' },
             { label: 'Pricing', to: '/enroll' },
             { label: 'Changelog', to: '/blog' }
           ]
@@ -109,7 +104,7 @@ const config: Config = {
         {
           title: 'Learn',
           items: [
-            { label: 'Docs', to: '/docs/overview' },
+            { label: 'Docs', to: '/docs' },
             { label: 'Labs', to: '/labs/section-1/lab-01-ipv6-underlay' },
             { label: 'Blog', to: '/blog' },
           ]
