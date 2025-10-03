@@ -1,5 +1,4 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
 import styles from './styles.module.css';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -25,16 +24,22 @@ export default function Stacks() {
 
     return (
         <div className={styles.stacksContainer}>
-            <Grid container spacing={2} justifyContent="center" alignItems="center">
+            <div
+                style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+                    gap: "1rem",
+                    justifyItems: "center",
+                    alignItems: "center",
+                }}
+            >
                 {items.map((item, index) => (
-                    <Grid item xs={2} key={index}>
-                        <div className={styles.gridItem}>
-                            <img src={item.src} alt={item.label} />
-                            <p>{item.label}</p>
-                        </div>
-                    </Grid>
+                    <div key={index} className={styles.gridItem}>
+                        <img src={item.src} alt={item.label} />
+                        <p>{item.label}</p>
+                    </div>
                 ))}
-            </Grid>
+            </div>
         </div>
-    );
+      );
 }

@@ -5,13 +5,10 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ValueProposition from "@site/src/components/ValueProposition";
 import MissionVision from "@site/src/components/MissionVision";
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
 import { useColorMode } from '@docusaurus/theme-common';
 import { initScrollAnimations, initStaggeredAnimations } from '@site/src/utils/scrollAnimations';
 
 import styles from "./index.module.css";
-import CNOENews from "../components/CNOENews";
 import Stacks from "../components/Stacks";
 const { useState, useEffect, useRef } = React;
 
@@ -48,11 +45,11 @@ function HomepageHeader() {
           {/* Main Content */}
           <div className={clsx(styles.heroTextContent, isVisible && 'cnoe-animate-fade-in-up')}>
             <h1 className={styles.heroTitle}>
-              <span className={styles.heroTitleAccent}>Cloud Native Operational Excellence</span>
+              <span className={styles.heroTitleAccent}>{`${siteConfig.title}`}</span>
             </h1>
 
             <p className={styles.heroSubtitle}>
-              An open community collaboration with the goal of helping facilitate platform engineering through the sharing of guidance, tooling, and internal developer platform (IDP) reference architectures.
+            Scalable network architecture adopted by data centers, yet simple enough for home users.
             </p>
 
             {/* CTA Buttons */}
@@ -232,21 +229,34 @@ const Partners = () => {
         </div>
 
         <div className={styles.partnersCarousel}>
-          <AliceCarousel
-            mouseTracking
-            items={items}
-            autoPlay={true}
-            disableDotsControls={true}
-            disableSlideInfo={true}
-            disableButtonsControls={true}
-            autoPlayInterval={3000}
-            infinite={true}
-            responsive={responsive}
-            animationType="fadeout"
-            animationDuration={800}
-          />
+          <div
+            style={{
+              display: "flex",
+              gap: "2rem",
+              overflowX: "auto",
+              scrollSnapType: "x mandatory",
+              padding: "1rem 0",
+            }}
+          >
+            {items.map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  flex: "0 0 auto",
+                  scrollSnapAlign: "center",
+                  textAlign: "center",
+                }}
+              >
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  style={{ maxHeight: "60px", objectFit: "contain" }}
+                />
+                <p style={{ marginTop: "0.5rem" }}>{item.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
-
 
       </div>
     </div>
@@ -269,7 +279,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={`Cloud Native Operational Excellence ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Joint efforts to build Internal Developer Platforms"
     >
       <HomepageHeader />
@@ -282,9 +292,6 @@ export default function Home() {
         </div>
         <div data-scroll-animation="fade-in-up" data-animation-delay="600" style={{ margin: 0, padding: 0 }}>
           <Partners />
-        </div>
-        <div data-scroll-animation="fade-in-up" data-animation-delay="800" style={{ margin: 0, padding: 0 }}>
-          <CNOENews />
         </div>
       </main>
 

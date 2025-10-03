@@ -79,7 +79,7 @@ const config: Config = {
       title: 'Bare Metal Networking for Private Clouds',
       logo: {
         alt: 'BMK8s',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         { to: '/docs', label: 'Curriculum', position: 'left' },
@@ -113,7 +113,7 @@ const config: Config = {
       additionalLanguages: ['go', 'yaml', 'bash', 'diff', 'json', 'c', 'csharp']
     },
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: 'light',
       disableSwitch: true,
       respectPrefersColorScheme: false
     },
