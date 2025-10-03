@@ -1,40 +1,61 @@
-import { Config } from '@docusaurus/types';
-import dotenv from 'dotenv';
-dotenv.config();
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Bare Metal Networking for Private Clouds',
   tagline: 'Design a pure L3 IPv6 fabric, automate Talos + Kubernetes, and ship eBPF CNFs with netkit',
-  url: 'https://ebpf.guide',
-  baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'cassamajor',
-  projectName: 'bare-metal-networking',
+
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  },
+
+  // Set the production url of your site here
+  url: 'https://ebpf.guide',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
+
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  i18n: { defaultLocale: 'en', locales: ['en'] },
-  markdown: { mermaid: true },
-  themes: ['@docusaurus/theme-mermaid'],
+  onBrokenMarkdownLinks: 'throw', // Default 'warn'
+
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
   presets: [
     [
-      '@docusaurus/preset-classic',
-      ({
+      'classic',
+      {
         docs: {
-          path: 'docs',
-          sidebarPath: require.resolve('./sidebars.ts'),
+          sidebarPath: './sidebars.ts',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/',
           remarkPlugins: [require('remark-validate-links')]
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/',
           feedOptions: {
             type: 'all',
             title: 'Bare Metal Networking for Private Clouds',
             description: 'Announcements and changelog related to the course',
             copyright: `© ${new Date().getFullYear()} Network Axis`,
             xslt: true
-          }
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
@@ -42,103 +63,56 @@ const config: Config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5
-        },
-        gtag: {
-          trackingID: process.env.GTAG_TRACKING_ID || 'G-XXXXXXXXXX',
-          anonymizeIP: true
         }
-      })
-    ]
-  ],
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'labs',
-        path: 'labs',
-        routeBasePath: 'labs',
-        sidebarPath: require.resolve('./sidebarsLabs.ts'),
-        remarkPlugins: [require('remark-validate-links')]
-      }
+      } satisfies Preset.Options,
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'reference',
-        path: 'reference',
-        routeBasePath: 'reference',
-        sidebarPath: require.resolve('./sidebarsReference.ts'),
-        remarkPlugins: [require('remark-validate-links')]
-      }
-    ]
   ],
+  
   themeConfig: {
-    colorMode: {
-      defaultMode: 'dark',
-      respectPrefersColorScheme: false
-    },
+    // Replace with your project's social card
+    image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Bare Metal Networking for Private Clouds',
+      logo: {
+        alt: 'BMK8s',
+        src: 'img/logo.svg',
+      },
       items: [
-        {
-          label: 'Curriculum',
-          position: 'left',
-          to: '/docs'
-        },
-        { to: '/blog', label: 'Announcements', position: 'left' },
-        { to: '/enroll', label: 'Enroll', position: 'right', className: 'navbar-item--button' }
-      ]
+        { to: '/docs', label: 'Curriculum', position: 'left' },
+        { to: '/blog', label: 'Changelog', position: 'left' },
+       ]
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Product',
+          title: 'Course',
           items: [
-            { label: 'Home', to: '/' },
             { label: 'Curriculum', to: '/docs' },
-            { label: 'Pricing', to: '/enroll' },
-            { label: 'Changelog', to: '/blog' }
-          ]
-        },
-        {
-          title: 'Learn',
-          items: [
-            { label: 'Docs', to: '/docs' },
-            { label: 'Labs', to: '/labs/section-1/lab-01-ipv6-underlay' },
-            { label: 'Blog', to: '/blog' },
-          ]
-        },
-        {
-          title: 'Community',
-          items: [
-            { label: 'Join Discord', href: '#' },
-            { label: 'Join Slack', href: '#' },
-            { label: 'Contact Us', href: 'mailto:contact@ebpf.guide' }
+            { label: 'Changelog', to: '/blog' },
+            { label: 'Contact Us', href: 'https://connect.cassamajor.family' },
           ]
         },
         {
           title: 'Legal',
           items: [
             { label: 'Terms of Service', to: '/legal/terms' },
-            { label: 'Privacy Policy', to: '/legal/privacy' }
+            { label: 'Privacy Policy', to: '/legal/privacy' },
           ]
         }
       ],
-      copyright: `© ${new Date().getFullYear()} Network Axis. All rights reserved.`
-    },
-    algolia: {
-      appId: process.env.DOCSEARCH_APP_ID || 'YOUR_APP_ID',
-      apiKey: process.env.DOCSEARCH_API_KEY || 'YOUR_API_KEY',
-      indexName: 'bmk8s'
+      copyright: `© ${new Date().getFullYear()} Network Axis. All rights reserved.`,
     },
     prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
       additionalLanguages: ['go', 'yaml', 'bash', 'diff', 'json', 'c', 'csharp']
     },
-    mermaid: {
-      theme: { light: 'neutral', dark: 'forest' }
-    }
-  }
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false
+    },
+  } satisfies Preset.ThemeConfig,
 };
 
 export default config;
