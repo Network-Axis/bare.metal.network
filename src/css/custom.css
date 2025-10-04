@@ -2398,7 +2398,7 @@ age Background Consistency */
   }
 }
 
-Remove any conflicting backgrounds from containers .container,
+/* Remove any conflicting backgrounds from containers .container, */
 .row,
 .col,
 .container-fluid {
