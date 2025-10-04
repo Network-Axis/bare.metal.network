@@ -463,7 +463,7 @@
 
 
 html[data-theme="dark"] .navbar .navbar__logo {
-  content: url(/img/logo-dark-no-name.png);
+  content: url(/img/logo.svg);
 }
 
 .sliderStyle {
