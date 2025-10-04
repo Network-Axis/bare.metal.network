@@ -49,7 +49,7 @@ function HomepageHeader() {
             </h1>
 
             <p className={styles.heroSubtitle}>
-            Scalable network architecture adopted by data centers, yet simple enough for home users.
+            Scalable network architecture created for data centers, adapted for the enterprise.
             </p>
 
             {/* CTA Buttons */}
