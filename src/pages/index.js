@@ -8,7 +8,6 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { initScrollAnimations, initStaggeredAnimations } from '@site/src/utils/scrollAnimations';
 
 import styles from "./index.module.css";
-import Stacks from "../components/Stacks";
 const { useState, useEffect, useRef } = React;
 
 
