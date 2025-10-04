@@ -32,6 +32,15 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'STANDARD PROTOCOLS',
+    Svg: require('@site/static/img/stacks/step3-light.svg').default,
+    description: (
+      <>
+      Layer-3 Spine and Leaf topology, using IPv6, BGP, BFD, and ECMP.
+      </>
+    ),
+  },
 ];
 
 function Feature({ Svg, title, description, index, isVisible }) {
