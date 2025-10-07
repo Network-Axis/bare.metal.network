@@ -4,6 +4,7 @@ authors: [cassamajor]
 tags: [ebpf]
 keywords: [eBPF, kernel, linux kernel, headers, linux headers]
 description: A brief introduction to the eBPF components
+draft: true
 ---
 
 From high-performance load balancers to real-time security auditing, eBPF empowers us to extend the kernel in production without having to recompile the kernel.
@@ -49,4 +50,4 @@ To compile an eBPF program, we must include the relevant Linux headers.
 
 ## What’s Next?
 
-In the next post, we’ll walk through [setting up a lightweight Linux VM on macOS for eBPF development](/docs/section-3/developer-environment.md). Stay tuned!
+In the next post, we’ll walk through [setting up a lightweight Linux VM on macOS for eBPF development](./development-environment.md). Stay tuned!
