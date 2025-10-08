@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Bare Metal Networking for Private Clouds',
-  tagline: 'Design a pure L3 IPv6 fabric, automate Talos + Kubernetes, and ship eBPF CNFs with netkit',
+  tagline: 'Bridging the gap between network and infrastructure with eBPF',
   favicon: 'img/logo.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future

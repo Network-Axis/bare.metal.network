@@ -47,7 +47,7 @@ function HomepageHeader() {
             </h1>
 
             <p className={styles.heroSubtitle}>
-            Scalable network architecture designed for data centers, adapted for the enterprise.
+            {`${siteConfig.tagline}`}
             </p>
 
             {/* CTA Buttons */}
