@@ -96,7 +96,8 @@ export default function MissionVision() {
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Why take this course?</h2>
           <p className={styles.sectionSubtitle}>
-          Network Architecture has been abstracted away during the migration to "The Cloud". It's still very relevant to those who power the cloud (data centers, hyperscalers, telco companies), and those who choose not to use it (on-prem, colo). These companies face the same challenges that exist for every technology company: reduce costs, increase performance, and mitigate risks. While Network Architecture is the guiding principles, the actual implementation comes down to software (that controls the logic) and hardware (where the software runs).
+          Infrastructure and networks are rarely operated as one coherent system.
+          This course combines the principles of declarative infrastructure and programmable networking to create modern, scalable architecture that is easy to deploy, maintain, and understand.
           </p>
         </div>
         <div ref={containerRef} className={styles.missionVisionGrid}>
