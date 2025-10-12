@@ -1,7 +1,7 @@
 ---
 title: An Introduction to Netkit
 authors: [cassamajor]
-tags: [netkit]
+tags: [netkit, cilium 1.16]
 keywords: [netkit]
 description: Understand the fundamentals of netkit, the BPF-programmable network device.
 sidebar_position: 1

@@ -2,6 +2,7 @@
 title: Working with Netkit
 sidebar_position: 3
 draft: true
+tags: ["cilium 1.16"]
 ---
 
 ```shell
