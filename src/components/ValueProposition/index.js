@@ -32,19 +32,30 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'STANDARD PROTOCOLS',
+    Svg: require('@site/static/img/stacks/step3-light.svg').default,
+    description: (
+      <>
+        Layer-3 Spine and Leaf topology, using IPv6, BGP, BFD, and ECMP.
+      </>
+    ),
+  },
 ];
 
-function Feature({ Svg, title, description, index }) {
+function Feature({ Svg, title, description, index, isVisible }) {
   return (
-    <div className={clsx('col col--4', styles.featureCard, 'cnoe-stagger-item')}>
-      <div className={styles.featureCardInner}>
-        <div className={styles.featureIconContainer}>
-          <Svg className={styles.featureSvg} role="img" />
-          <div className={styles.featureIconOverlay}></div>
+    <div className={clsx(styles.missionVisionItem, isVisible && styles.visible)}>
+      <div className={styles.missionVisionCard}>
+        <div className={styles.iconSection}>
+          <div className={styles.iconContainer}>
+            <Svg className={styles.featureSvg} role="img" />
+            <div className={styles.iconGlow}></div>
+          </div>
         </div>
-        <div className={styles.featureContent}>
-          <h3 className={styles.featureTitle}>{title}</h3>
-          <p className={styles.featureDescription}>{description}</p>
+        <div className={styles.contentSection}>
+          <h3 className={styles.missionVisionTitle}>{title}</h3>
+          <p className={styles.missionVisionDescription}>{description}</p>
         </div>
       </div>
     </div>
@@ -53,20 +64,15 @@ function Feature({ Svg, title, description, index }) {
 
 export default function ValueProposition() {
   const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = React.useState(false);
 
   useEffect(() => {
-    // Initialize staggered animations for feature cards
     if (typeof window !== 'undefined' && containerRef.current) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              const cards = entry.target.querySelectorAll('.cnoe-stagger-item');
-              cards.forEach((card, index) => {
-                setTimeout(() => {
-                  card.classList.add('cnoe-animate-visible');
-                }, index * 150);
-              });
+              setIsVisible(true);
               observer.unobserve(entry.target);
             }
           });
@@ -90,15 +96,13 @@ export default function ValueProposition() {
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Why take this course?</h2>
           <p className={styles.sectionSubtitle}>
-          Network Architecture has been abstracted away during the migration to "The Cloud". It's still very relevant to those who power the cloud (data centers, hyperscalers, telco companies), and those who choose not to use it (on-prem, colo). These companies face the same challenges that exist for every technology company: reduce costs, increase performance, and mitigate risks. While Network Architecture is the guiding principles, the actual implementation comes down to software (that controls the logic) and hardware (where the software runs).
+            Infrastructure and networks are rarely operated as one coherent system.
+            This course combines the principles of declarative infrastructure and programmable networking to create modern, scalable architecture that is easy to deploy, maintain, and understand.
           </p>
         </div>
-        <div
-          ref={containerRef}
-          className={clsx("row", styles.featuresGrid, "cnoe-stagger-container")}
-        >
+        <div ref={containerRef} className={styles.missionVisionGrid}>
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} index={idx} {...props} />
+            <Feature key={idx} index={idx} isVisible={isVisible} {...props} />
           ))}
         </div>
       </div>
