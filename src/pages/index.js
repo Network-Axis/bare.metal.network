@@ -283,11 +283,11 @@ export default function Home() {
     >
       <HomepageHeader />
       <main style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column' }}>
-        <div data-scroll-animation="fade-in-up" data-animation-delay="200" style={{ margin: 0, padding: 0 }}>
-          <ValueProposition />
-        </div>
         <div data-scroll-animation="fade-in-up" data-animation-delay="400" style={{ margin: 0, padding: 0 }}>
           <MissionVision />
+        </div>
+        <div data-scroll-animation="fade-in-up" data-animation-delay="200" style={{ margin: 0, padding: 0 }}>
+          <ValueProposition />
         </div>
       </main>
 

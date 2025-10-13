@@ -2,60 +2,19 @@ import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-const FeatureList = [
-  {
-    title: 'CLOUD-NATIVE NETWORK FUNCTIONS',
-    Svg: require('@site/static/img/modular.svg').default,
-    description: (
-      <>
-        Write, build, and deploy <strong><a href="https://ebpf.io" target="_blank" rel="noopener noreferrer">eBPF</a></strong> programs that intercept and manipulate network packets at scale.
-      </>
-    ),
-  },
-  {
-    title: 'SERVICE FUNCTION CHAINING',
-    Svg: require('@site/static/img/cloudnative.svg').default,
-    description: (
-      <>
-      Achieve host-native packet processing speeds with <strong>netkit</strong>, the BPF-programmable network device that replaces traditional veth/tc datapaths.
-      </>
-    ),
-  },
-  {
-    title: '100% OPEN SOURCE',
-    Svg: require('@site/static/img/community.svg').default,
-    description: (
-      <>
-        Automate cluster provisioning with Talos Linux,
-        enforce packet flow with Cilium network policy across L3/L4/L7,
-        and observe network traffic end-to-end using Hubble.
-      </>
-    ),
-  },
-  {
-    title: 'STANDARD PROTOCOLS',
-    Svg: require('@site/static/img/stacks/step3-light.svg').default,
-    description: (
-      <>
-        Layer-3 Spine and Leaf topology, using IPv6, BGP, BFD, and ECMP.
-      </>
-    ),
-  },
-];
+const FeatureList = [];
 
-function Feature({ Svg, title, description, index, isVisible }) {
+function Feature({ Svg, title, description, index }) {
   return (
-    <div className={clsx(styles.missionVisionItem, isVisible && styles.visible)}>
-      <div className={styles.missionVisionCard}>
-        <div className={styles.iconSection}>
-          <div className={styles.iconContainer}>
-            <Svg className={styles.featureSvg} role="img" />
-            <div className={styles.iconGlow}></div>
-          </div>
+    <div className={clsx('col col--4', styles.featureCard, 'cnoe-stagger-item')}>
+      <div className={styles.featureCardInner}>
+        <div className={styles.featureIconContainer}>
+          <Svg className={styles.featureSvg} role="img" />
+          <div className={styles.featureIconOverlay}></div>
         </div>
-        <div className={styles.contentSection}>
-          <h3 className={styles.missionVisionTitle}>{title}</h3>
-          <p className={styles.missionVisionDescription}>{description}</p>
+        <div className={styles.featureContent}>
+          <h3 className={styles.featureTitle}>{title}</h3>
+          <p className={styles.featureDescription}>{description}</p>
         </div>
       </div>
     </div>
@@ -64,15 +23,20 @@ function Feature({ Svg, title, description, index, isVisible }) {
 
 export default function ValueProposition() {
   const containerRef = useRef(null);
-  const [isVisible, setIsVisible] = React.useState(false);
 
   useEffect(() => {
+    // Initialize staggered animations for feature cards
     if (typeof window !== 'undefined' && containerRef.current) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              setIsVisible(true);
+              const cards = entry.target.querySelectorAll('.cnoe-stagger-item');
+              cards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add('cnoe-animate-visible');
+                }, index * 150);
+              });
               observer.unobserve(entry.target);
             }
           });
@@ -94,15 +58,17 @@ export default function ValueProposition() {
     <section className={styles.features}>
       <div className="container">
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Why take this course?</h2>
+          <h2 className={styles.sectionTitle}>Designed for data centers, adapted for the enterprise</h2>
           <p className={styles.sectionSubtitle}>
-            Infrastructure and networks are rarely operated as one coherent system.
-            This course combines the principles of declarative infrastructure and programmable networking to create modern, scalable architecture that is easy to deploy, maintain, and understand.
+          This network architecture is used by Google, Facebook, Bytedance, and Nokia due to its scalability.
           </p>
         </div>
-        <div ref={containerRef} className={styles.missionVisionGrid}>
+        <div
+          ref={containerRef}
+          className={clsx("row", styles.featuresGrid, "cnoe-stagger-container")}
+        >
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} index={idx} isVisible={isVisible} {...props} />
+            <Feature key={idx} index={idx} {...props} />
           ))}
         </div>
       </div>
