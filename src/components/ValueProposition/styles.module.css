@@ -219,7 +219,7 @@
 .missionVisionTitle::after {
   content: '';
   position: absolute;
-  bottom: 10rem;
+  bottom: -0.5rem;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
