@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Bare Metal Networking for Private Clouds',
   tagline: 'Bridging the gap between networking and infrastructure with eBPF',
-  favicon: 'img/logo.svg',
+  favicon: 'img/logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -74,7 +74,7 @@ const config: Config = {
   
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/logo.svg',
+    image: 'img/logo.png',
     navbar: {
       title: 'Bare Metal Networking for Private Clouds',
       logo: {
