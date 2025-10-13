@@ -74,7 +74,7 @@ const config: Config = {
   
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/logo.svg',
+    image: 'img/logo.png',
     navbar: {
       title: 'Bare Metal Networking for Private Clouds',
       logo: {
