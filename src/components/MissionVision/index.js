@@ -27,7 +27,7 @@ const FeatureList = [
     description: (
       <>
         Automate cluster provisioning with Talos Linux,
-        enforce packet flow with Cilium network policy across L3/L4/L7,
+        enforce L3/L4/L7 packet flow with Cilium network policies,
         and observe network traffic end-to-end using Hubble.
       </>
     ),
