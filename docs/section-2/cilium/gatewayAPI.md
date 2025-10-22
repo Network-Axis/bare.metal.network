@@ -27,6 +27,8 @@ Gateway API capabilities:
 ### Border Gateway Protocol (BGP)
 Cilium can advertise the LoadBalancer Service IPs or the PodCIDR ranges to the rest of the network.
 
+BGP allows to announce IP addresses for pods and services
+
 | Feature                     | LoadBalancer IPs                            | PodCIDRs                                 |
 |----------------------------|---------------------------------------------|-------------------------------------------|
 | **Traffic Type**           | External (to Services)                      | Internal (to Pods)                        |
@@ -42,6 +44,11 @@ Once the peering session is established and routes are advertised/exchanged, the
 The Cilium CLI command `cilium bgp peers` can be used to verify peering sessions have been established and routes are being advertised.
 
 Better suited for data center networks
+
+- Cilium leverages eBPF to connect its agents to existing BGP infrastructure, allowing to:
+    - announce Pod CIDRs for direct routing, both inside the cluster and outside of it
+    - announce service IPs (both LoadBalancer and ClusterIP) on the network
+    - tune BGP parameters such as eBGP multihop, MD5 authentication, and communities
 
 ### Address Resolution Protocol (ARP)
 When the client is on the same network as the Kubernetes LoadBalancer Service, BGP is not necessary.

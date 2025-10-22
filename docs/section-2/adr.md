@@ -69,7 +69,7 @@ kubectl get ciliumendpoint -A
 kubectl -n kube-system get ciliumendpoint -l k8s-app=kube-dns
 ```
 
-::: info
+:::info
 
 Pods that use the host networking are not managed by Cilium, and will therefore not have a Cilium Endpoint associated with them.
 
@@ -83,6 +83,11 @@ kubectl get ciliumidentity -A
 
 - a `CiliumEndpoint` represents a specific pod or workload and contains dynamic information such as IP addresses
 - a `CiliumIdentity` (or Security Identity) represents the logical identity of a workload based on its labels, and can apply to multiply `CiliumEndpoints`.
+
+:::info
+Cilium implements Network Policies using Cilium Identities.
+
+:::
 
 When a Pod is added to a node, the Container Runtime Interface (CRI) creates a virtual Ethernet adapter (also called a "veth pair") to establish a connection between the host's network namespace and the Pod's network namespace.
 
@@ -106,7 +111,7 @@ Services provide L4 load-balancing for pods within the cluster.
 
 Services are a stable network interface to access workloads.
 
-::: info Service Types
+:::info Service Types
 - ClusterIP (the default) for internal load-balancing: https://play.instruqt.com/assets/tracks/ylhikjm5qpjv/e1cd4bda6570de6c5acf9bec9501a04c/assets/svc_clusterip.png or https://play.instruqt.com/assets/tracks/ylhikjm5qpjv/b85412d1e7b42c90b612d190c5ae6b3c/assets/svc_clusterip_routing.png
 - NodePort to expose services outside the cluster
 - LoadBalancer to attach an external load-balancer to a service
@@ -175,10 +180,18 @@ kubectl describe -f deathstar-svc.yaml
 ```
 
 
-::: info
+:::info
 Cilium implements Gateway API resources using Envoy, and optimizes network paths with eBPF.
  
- :::
+:::
 
  ### Observability
  eBPF is used to collect data in the kernel, and Hubble acts as a frontend to query and visualize it.
+
+
+ ### [Network Policies](./cilium/networkPolicies.md)
+-  Kubernetes Network Policies have no standard implementation, and do not support Layer 7 or DNS-based rules.
+- We will use `CiliumNetworkPolicy` and `CiliumClusterwideNetworkPolicy`
+- Layer 7 to be able to block traffic based on HTTP paths.
+- Cilium implements Layer 3 and 4 network policies using eBPF in the kernel exclusively.
+- Layer 7 policies cannot yet be enforced using eBPF.

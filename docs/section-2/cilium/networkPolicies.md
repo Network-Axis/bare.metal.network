@@ -107,6 +107,26 @@ Host processes are not managed by Kubernetes, so they visibility into an applica
 ---
 
 ## Egress Gateway
+:::tip To the point
+
+Egress Gateway provides identity-based sNAT for Kubernetes workloads with deterministic IP addresses.
+
+:::
+
+
+
+
+![](https://play.instruqt.com/assets/tracks/ylhikjm5qpjv/2c3d646c3afa919249c23a457a5248da/assets/egress_gw_schema.png)
+
+The main issue when integrating with endpoints outside the Kubernetes cluster is identifying the source of the traffic.
+
+For a database running outside the K8s cluster, you want to restrict access to specific applications.
+
+When using [direct routing](./routing.md#2-native--direct-routing), external firewalls will still need to know which CIDR blocks are linked to the desired source workload. Using [IPAM](./IPAM.md) for this would not be scalable because we would have to assign entire IPAM CIDRs to the namespaces with the workloads. Instead, Egress Gateway allows us to associate a known IP or IP range to exit the cluster depending on the source identity.
+
+
+
+Associate CIDR w/ K8s workload
 
 - Enables external-facing firewall to control Internet-bound traffic from the cluster.
 
