@@ -17,3 +17,5 @@ tags: ["cilium 1.16"]
 |Packet Mirroring|L2/L3|Copy packets to a monitoring interface or buffer|
 |TLS Offload / Proxying|L7|Terminate or inspect encrypted traffic (rare in eBPF)|
 |Flow Classification|L3-L7|Identify sessions and categorize traffic (QoS, DPI)|
+
+![](/img/cilium/sfc.png)

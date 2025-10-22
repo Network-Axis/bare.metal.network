@@ -1,5 +1,8 @@
 
 
+Observability: flow logs, metrics, Grafana dashboard
+
+
 `to-overlay`: if pods are on diffeent nodes
 `to-endpoint`: if both pods are located on the same node (there is no need to access the overlay network to route between them.)
 

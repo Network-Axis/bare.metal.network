@@ -195,3 +195,33 @@ Cilium implements Gateway API resources using Envoy, and optimizes network paths
 - Layer 7 to be able to block traffic based on HTTP paths.
 - Cilium implements Layer 3 and 4 network policies using eBPF in the kernel exclusively.
 - Layer 7 policies cannot yet be enforced using eBPF.
+
+
+### Cilium
+Cilium is designed for large-scale, highly-dynamic containerized environments.
+
+Cilium provides cloud-native networking, and gives us the ability to:
+- enforce policies
+- troubleshoot the network
+- stay secure with minimal effort
+
+It consists of several components:
+- K8s Networking: Connects Pods and Containers together
+- Security: Micro Segmentation, Encryption, Connecting Multiple Clusters Together
+- Observability through Hubble: Flow Logs, Metrics, Grafana Dashboard 
+- Ingress and Gateway API Controller: Provides L7 Load Balancing
+- Sidecar-free service mesh
+- runtime security (Tetragon)
+- eBPF-based: high performance, highly scalable, observability through eBPF
+
+Since pods are transient, IP addresses and ports are no longer relevant. Cilium natively understands container identities and generates identities to secure workloads.
+
+:::danger What API protocols does Cilium support?
+
+parses API protocols like HTTP, gRPC, and Kafka
+
+:::
+
+
+### eBPF
+eBPF provides us the opportunity to rethink Linux networking and security for the age of microservices.

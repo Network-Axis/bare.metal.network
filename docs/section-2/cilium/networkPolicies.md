@@ -5,6 +5,9 @@ title: Network Policies
 draft: true
 ---
 
+- [Link to official tutorial](https://editor.cilium.io/)
+
+
 - Network Policies are implemented by the CNI.
 - Standard Network Policies define how a pod can communicate with various entities.
 - Filter based on Layer 3 (IP addresses) or Layer 4 (Port and Protocol).
@@ -20,6 +23,7 @@ Cilium's approach to security is based on identities rather than IP addresses.
 Identities are derived from labels and other metadata that are assigned to pods.
 For example, we would create a rule allowing traffic from a pod with the label `role=frontend` to connect to any pod with the label `role=backend`.
 
+![](https://play.instruqt.com/assets/tracks/ucdsyxm1sfzh/c8aefb5236f2b02b7c3d775ae88d8539/assets/identity_store.png)
 
 ## Layer 7 filtering
 Cilium Network Policies also provide application visibility and control using Layer 7 filtering.
@@ -117,6 +121,20 @@ Egress Gateway provides identity-based sNAT for Kubernetes workloads with determ
 
 
 ![](https://play.instruqt.com/assets/tracks/ylhikjm5qpjv/2c3d646c3afa919249c23a457a5248da/assets/egress_gw_schema.png)
+
+`kubectl get cep --all-namespaces` can be used to retrieve all endpoints managed by Cilium. The `cep` resrouce stands for `Cilium Endpoint`.
+
+```
+root@server:~# kubectl get cep --all-namespaces
+NAMESPACE            NAME                                      SECURITY IDENTITY   ENDPOINT STATE   IPV4           IPV6
+default              deathstar-86f85ffb4d-7d86t                4916                ready            10.244.1.238   
+default              deathstar-86f85ffb4d-dxp9z                4916                ready            10.244.2.32    
+default              tiefighter                                48742               ready            10.244.1.197   
+default              xwing                                     1071                ready            10.244.2.34    
+kube-system          coredns-674b8bbfcf-4wzs9                  25125               ready            10.244.0.131   
+kube-system          coredns-674b8bbfcf-cbk2f                  25125               ready            10.244.0.135   
+local-path-storage   local-path-provisioner-7dc846544d-rp98n   3532                ready            10.244.0.216   
+```
 
 The main issue when integrating with endpoints outside the Kubernetes cluster is identifying the source of the traffic.
 

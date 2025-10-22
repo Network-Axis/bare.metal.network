@@ -1,0 +1,1 @@
+The service will load balance traffic to all pods with labels ... e.g. `env=prod`.

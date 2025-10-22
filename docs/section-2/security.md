@@ -129,3 +129,46 @@ kubectl -n star-wars diff -f cilium-network-policy-ingress.yaml
 The ingress Entity is used for any traffic involving Envoy, whether it is controlled via an Ingress, a Gateway, or GAMMA.
 
 :::
+
+Cilium uses the labels assigned to pods to define security policies.
+
+
+Secure access to pods with a specific label
+```yaml
+spec:
+  podSelector:
+    matchLabels:
+      org: empire
+      class: deathstar
+```
+
+Allow only traffic from pods tagged with specific labels. This occurs at L3 and uses eBPF.
+```yaml
+spec:
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              org: empire
+```
+
+Allow only TCP/80 traffic. This occurs at L4 and uses eBPF.
+```
+spec:
+  ingress:
+      ports:
+        - port: 80
+          protocol: TCP
+```
+
+
+---
+
+ layer 3 (IP protocol) 
+ layer 4 (TCP protocol)
+
+ often referred to as a L3/L4 network security policy
+
+
+We can use Network Policies to restrict access and enforce least-privilege isolation between microservices.
+We achieve this by specifying which HTTP requests are allowed.
