@@ -1,5 +1,6 @@
 ---
 title: "Course Overview"
+description: An overview of the course that describes what participants will learn.
 slug: /
 ---
 
