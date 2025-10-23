@@ -1,5 +1,6 @@
 ---
 title: Troubleshooting a Kubernetes Network
+description: A list of tools to troubleshoot a Kubernetes network
 ---
 
 
