@@ -175,7 +175,7 @@ The GAMMA project defines the specification of internal L7 routing, and uses Gat
 - an `HTTPRoute` resource for the path-based routing logic to the service
 
 ```
-kubectl get -f deathstar-svc.yaml
+kubectl get -f deathstar-svc.yaml --show-labels
 kubectl describe -f deathstar-svc.yaml
 ```
 

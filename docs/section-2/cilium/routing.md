@@ -39,16 +39,6 @@ No source-NAT
 external endpoints see the Pod's IP as source.
 Cluster nodes need a method to exchange routing tables
 
-
-
-
----
-
-:::info
-Dual Stack IPv4/IPv6 are supported since Kubernetes 1.23.
-
-:::
-
 ---
 
 # QoS

@@ -23,3 +23,7 @@ Cilium supports multiple IPAM modes:
 Pods in different namespaces on the same node may pick up IP addresses from the same range.
 
 In Kubernetes, IP addresses are irrelevant as they no longer represent an identity.
+
+The LoadBalancer IP Address Management (LB-IPAM) feature allows Cilium to provision IP addresses for Kubernetes LoadBalancer Services.
+
+Cilium 1.13: "North-South" Load Balancer services announced to the underlying networking using BGP.

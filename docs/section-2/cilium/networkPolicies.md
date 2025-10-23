@@ -117,12 +117,41 @@ Egress Gateway provides identity-based sNAT for Kubernetes workloads with determ
 
 :::
 
+specify which nodes should be used by a pod in order to reach the outside world.
+
+
+This Cilium Egress Gateway policy targets pods labeled `org=empire`.
+When these pods try to reach the `10.0.4.0/24` network, the traffic will leave the Kubernetes cluster through a node labeled `egress-gw=true`, masquerading the source IP from the net1 interface.
+
+```
+kubectl get node --show-labels
+```
+
+
+```yaml
+apiVersion: cilium.io/v2
+kind: CiliumEgressGatewayPolicy
+metadata:
+  name: remote-outpost
+spec:
+  destinationCIDRs:
+    - "10.0.4.0/24"
+  selectors:
+    - podSelector:
+        matchLabels:
+          org: empire
+  egressGateway:
+    nodeSelector:
+      matchLabels:
+        egress-gw: 'true'
+    interface: net1
+```
 
 
 
 ![](https://play.instruqt.com/assets/tracks/ylhikjm5qpjv/2c3d646c3afa919249c23a457a5248da/assets/egress_gw_schema.png)
 
-`kubectl get cep --all-namespaces` can be used to retrieve all endpoints managed by Cilium. The `cep` resrouce stands for `Cilium Endpoint`.
+`kubectl get ciliumendpoints --all-namespaces --show-labels` can be used to retrieve all endpoints managed by Cilium.
 
 ```
 root@server:~# kubectl get cep --all-namespaces
@@ -191,3 +220,10 @@ Cilium Enforcement modes for NetworkPolicies:
 </details>
 
 Enterprise Edition of Cilium: Hubble lists all the flows in the cluster, and a NetworkPolicy can be created by clicking on the flow.
+
+
+---
+
+```shell
+kubectl get ciliumidentities --show-labels
+```
