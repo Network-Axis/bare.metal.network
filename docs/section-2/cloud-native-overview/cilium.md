@@ -24,23 +24,3 @@ kubectl get -n kube-system configmap cilium-config -o yaml
 - Classless Inter-Domain Routing (CIDR).
 
 [^1]: https://docs.cilium.io/en/stable/network/concepts/ipam/kubernetes/
-
----
-
-## Troubleshooting
-
-| Use case                                     | Kubernetes Networking             |
-|---------------------------------------------|----------------------------------|
-| check TCP/IP connectivity                   | ping                             |
-| check HTTP connectivity                     | curl                             |
-| check the status of the network             | kubectl or cilium CLI            |
-| capture logs from network                   | kubectl logs                     |
-| capture traffic patterns and bandwidth usage| Hubble                           |
-| analyze network traffic                     | tcpdump/Wireshark/Hubble         |
-| generate traffic for performance testing    | iperf                            |
-
-It may be necessary to deploy an ephemeral container. The [netshoot](https://github.com/nicolaka/netshoot) image contains many of the tools detailed above. This can be accomplished with the following command:
-
-```
-kubectl debug <pod> -it --image=nicolaka/netshoot -- tcpdump -i eth0
-```

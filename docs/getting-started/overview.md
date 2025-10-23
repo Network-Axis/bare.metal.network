@@ -1,8 +1,7 @@
 ---
-sidebar_position: 1
+title: "Course Overview"
+slug: /
 ---
-
-# Course Overview
 
 Welcome to **Bare Metal Networking for Private Clouds**!
 In this course, you'll learn to design and deploy a modern data center network from the ground up.
