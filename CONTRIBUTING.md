@@ -8,7 +8,7 @@ fnm default 24
 
 Create the repository
 ```
-npx create-docusaurus@latest bare-metal-networking classic
+npx create-docusaurus@latest bare.metal.network classic
 ```
 
 Install mermaid
