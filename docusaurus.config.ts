@@ -41,7 +41,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/',
+          editUrl: 'https://github.com/network-axis/bare.metal.network/edit/main/',
           remarkPlugins: [require('remark-validate-links')]
         },
         blog: {
@@ -55,7 +55,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/cassamajor/bare-metal-networking/edit/main/',
+          editUrl: 'https://github.com/network-axis/bare.metal.network/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
