@@ -1,4 +1,6 @@
-
+---
+title: Introduction to Hubble
+---
 
 Observability: flow logs, metrics, Grafana dashboard
 

@@ -1,3 +1,7 @@
+---
+title: Introduction to Hubble
+---
+
 Hubble is a fully distributed networking and security observability platform for Cloud Native workloads.
 
 Provides deep visibility into:
