@@ -15,14 +15,6 @@
 	"preview_urls": true,
 	"routes": [
 		{
-			"pattern": "metal.network",
-			"custom_domain": true
-		},
-		{
-			"pattern": "www.metal.network",
-			"custom_domain": true
-		},
-		{
 			"pattern": "bare.metal.network",
 			"custom_domain": true
 		}
