@@ -2,6 +2,7 @@
 sidebar_position: 1
 description: The equivalent of firewall rules
 title: Introduction to Network Policies
+draft: true
 ---
 
 :::warning Word of Caution

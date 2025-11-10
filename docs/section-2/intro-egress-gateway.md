@@ -1,5 +1,6 @@
 ---
 title: Introduction to Egress Gateway
+draft: true
 ---
 
 :::tip To the point

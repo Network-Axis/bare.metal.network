@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 import CodeBlock from '@theme/CodeBlock';
 
 By default, all workloads can communicate with each other without restrictions, regardless of their namespace.

@@ -1,6 +1,7 @@
 ---
 title: Implement a Network Policy on the Host
 sidebar_position: 2
+draft: true
 ---
 
 ## Node/Host Level Filtering

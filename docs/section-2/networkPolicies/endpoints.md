@@ -1,6 +1,7 @@
 ---
 title: Endpoints
 sidebar_position: 3
+draft: true
 ---
 
 `kubectl get ciliumendpoints --all-namespaces --show-labels` can be used to retrieve all endpoints managed by Cilium.

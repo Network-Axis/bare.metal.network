@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 Use the `LoadBalancer` Kubernetes Service type to expose Kubernetes applications outside of the cluster.
 
 To allocate an IP address, you will need to configure a Cilium LB IP Pool, using the `CiliumLoadBalancerIPPool` CRD.
