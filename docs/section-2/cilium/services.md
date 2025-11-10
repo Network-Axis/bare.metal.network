@@ -46,7 +46,7 @@ The nodes will act as NAT gateways by forwarding traffic targeting a specific po
 
 Cilium can act as a load balancer network provider. 
 Cilium can assign an external IP addresses with the Load Balancer IP Address Management [LB-IPAM](https://docs.cilium.io/en/stable/network/lb-ipam/) feature
-This IP address will be made accessible by BGP or ARP.
+This IP address will be made accessible by [BGP](./gatewayAPI.md#border-gateway-protocol-bgp) or ARP.
 
 
 ---
@@ -55,4 +55,12 @@ Load balancing and security policies do not work across clusters.
 
 Cilium Cluster Mesh discovers services in multiple clusters automatically and load balances traffic.
 
-The main use case for Cluster Mesh is High Availability: replicas of the same services in each cluster, and the clusters resides in multiple regions or availability zones. Also allows enforcing Network Policies across multiple clusters.
+The main use case for Cluster Mesh is High Availability: replicas of the same services in each cluster, and the clusters resides in multiple regions or availability zones.
+Also allows enforcing Network Policies across multiple clusters.
+
+Cluster meshing occurs at L3/L4 using eBPF, up to 511 clusters.
+
+Kubernetes doesn't have a standard feature for cross-cluster load-balancing
+
+---
+

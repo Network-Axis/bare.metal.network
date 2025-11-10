@@ -18,7 +18,7 @@ Appliances included:
 - [DNS servers](./DNS.md)
 - DHCP servers
 - [Load Balancers](./services.md)
-- [Firewalls](./networkPolicies.md)
+- [Firewalls](../networkPolicies/intro-networkPolicies.md)
 - Network Monitoring Appliances
 - VPN Devices
 

@@ -2,6 +2,7 @@
 title: Netkit Internals
 sidebar_position: 2
 draft: true
+tags: ["cilium 1.16"]
 ---
 
 **Cilium**
