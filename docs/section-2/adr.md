@@ -189,7 +189,7 @@ Cilium implements Gateway API resources using Envoy, and optimizes network paths
  eBPF is used to collect data in the kernel, and Hubble acts as a frontend to query and visualize it.
 
 
- ### [Network Policies](./cilium/networkPolicies.md)
+ ### [Network Policies](./networkPolicies/intro-networkPolicies.md)
 -  Kubernetes Network Policies have no standard implementation, and do not support Layer 7 or DNS-based rules.
 - We will use `CiliumNetworkPolicy` and `CiliumClusterwideNetworkPolicy`
 - Layer 7 to be able to block traffic based on HTTP paths.

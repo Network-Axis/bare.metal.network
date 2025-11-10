@@ -19,7 +19,7 @@ Additionally, new nodes that join the cluster are automatically added to overlay
 
 
 This auto-configuration provides simplicity, as risks of CIDR clashes are limited.
-Connections to outside the cluster will be source-NATed by Cilium nodes (traffic will appear to come form the node where the pod is deployed, unless using [Egress Gateway](./networkPolicies.md#egress-gateway)).
+Connections to outside the cluster will be source-NATed by Cilium nodes (traffic will appear to come form the node where the pod is deployed, unless using [Egress Gateway](../intro-egress-gateway.md)).
 
 One drawback is that network overlays (or encapsulation in general) adds overhead to every packet.
 
