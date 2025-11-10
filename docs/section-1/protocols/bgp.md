@@ -73,7 +73,7 @@ kubectl get ciliumbgpclusterconfig
 ```
 
 
-:::note CLI: `cilium bgp peers`
+:::note CLI: `cilium bgp peers` and `cilium bgp routes`
 
 Verify that the sessions have been established and that routes are learned
 

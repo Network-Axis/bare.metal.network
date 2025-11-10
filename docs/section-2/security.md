@@ -68,6 +68,7 @@ Cilium implements the above policy in two tiers:
 
 While L3/L4 rules enforced via eBPF lead to dropped packets, L7 rules applied by Envoy return denied codes for the application protocol. In this case, we're parsing HTTP traffic so it returns 403 for a denied request.
 
+Envoy provides powerful features such as traffic routing, retries, and observability, ensuring efficient handling of HTTP and gRPC traffic.
 
 
 

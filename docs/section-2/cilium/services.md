@@ -61,3 +61,6 @@ Also allows enforcing Network Policies across multiple clusters.
 Cluster meshing occurs at L3/L4 using eBPF, up to 511 clusters.
 
 Kubernetes doesn't have a standard feature for cross-cluster load-balancing
+
+---
+

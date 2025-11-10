@@ -41,7 +41,7 @@ BGP allows to announce IP addresses for pods and services
 
 Once the peering session is established and routes are advertised/exchanged, the rest of the network and access applications hosted in the Kubernetes cluster.
 
-The Cilium CLI command `cilium bgp peers` can be used to verify peering sessions have been established and routes are being advertised.
+The Cilium CLI commands `cilium bgp peers` and `cilium bgp routes` can be used to verify peering sessions have been established and routes are being advertised.
 
 Better suited for data center networks
 
