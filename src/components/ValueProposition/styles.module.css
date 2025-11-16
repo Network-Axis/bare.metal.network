@@ -186,7 +186,7 @@
 .featureTitle::after {
   content: '';
   position: absolute;
-  bottom: 10rem;
+  bottom: -0.5rem;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
@@ -215,19 +215,19 @@
   .features {
     padding: 3rem 0;
   }
-  
+
   .sectionTitle {
     font-size: var(--ifm-font-size-3xl);
   }
-  
+
   .sectionSubtitle {
     font-size: var(--ifm-font-size-lg);
   }
-  
+
   .featureCardInner {
     padding: 2rem 1.5rem;
   }
-  
+
   .featureSvg {
     height: 64px;
     width: 64px;
@@ -238,19 +238,19 @@
   .sectionHeader {
     margin-bottom: 2rem;
   }
-  
+
   .sectionTitle {
     font-size: var(--ifm-font-size-2xl);
   }
-  
+
   .featureCardInner {
     padding: 1.5rem 1rem;
   }
-  
+
   .featureTitle {
     font-size: var(--ifm-font-size-base);
   }
-  
+
   .featureDescription {
     font-size: var(--ifm-font-size-sm);
   }

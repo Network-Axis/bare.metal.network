@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
+import ValueProposition from "@site/src/components/ValueProposition";
 import MissionVision from "@site/src/components/MissionVision";
 import { useColorMode } from '@docusaurus/theme-common';
 import { initScrollAnimations, initStaggeredAnimations } from '@site/src/utils/scrollAnimations';
@@ -284,6 +285,9 @@ export default function Home() {
       <main style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column' }}>
         <div data-scroll-animation="fade-in-up" data-animation-delay="400" style={{ margin: 0, padding: 0 }}>
           <MissionVision />
+        </div>
+        <div data-scroll-animation="fade-in-up" data-animation-delay="200" style={{ margin: 0, padding: 0 }}>
+          <ValueProposition />
         </div>
       </main>
 
