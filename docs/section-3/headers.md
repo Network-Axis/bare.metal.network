@@ -50,4 +50,4 @@ To compile an eBPF program, we must include the relevant Linux headers.
 
 ## What’s Next?
 
-In the next post, we’ll walk through [setting up a lightweight Linux VM on macOS for eBPF development](./development-environment.md). Stay tuned!
+In the next post, we’ll walk through [setting up a lightweight Linux VM on macOS for eBPF development](../getting-started/development-environment.md). Stay tuned!
