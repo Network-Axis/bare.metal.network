@@ -1,5 +1,5 @@
 ---
-title: Setup an eBPF development environment on macOS
+title: Setup an eBPF Development Environment on macOS
 authors: [cassamajor]
 tags: [ebpf]
 keywords: [eBPF, OrbStack, VS Code, Intellisense, cloud-init, macOS, M1, M2, M3]
@@ -104,15 +104,16 @@ System Settings -> Privacy & Security -> Files & Folders. For Visual Studio Code
 
 VS Code can be configured to enable local development with headers (no red squiggly line), but we need to tell VS Code where to find these files.
 
-Configuring IntelliSense will allow you to view source files using the "Go to Definition" keyboard shortcut.
-
-To view the keyboard shortcut, press <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and enter in "Go to Definition".
-
+Configuring IntelliSense will allow you to view source files using the `Go to Definition` keyboard shortcut.
 Put your cursor on the code definition and press the keyboard shortcut.
+Alternatively, you can use <kbd>Command</kbd>+<kbd>Left Click</kbd> on the code definition.
 
-Alternatively, you can <kbd>Command</kbd>+<kbd>Left Click</kbd>, the code definition.
+:::tip
+To view the keyboard shortcut, press <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and type `Go to Definition`.
 
-<kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>Left Arrow</kbd> navigates back to the previous file, before going to the definition. <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>Right Arrow</kbd> returns to the definition. These are the "Open Previos Editor" and "Open Next Editor" keyboard shortcuts.
+
+Two other helpful keyboard shortcuts are `Open Previous Editor` and `Open Next Editor`, which allow you to navigate back and forth betwen your code and the source code.
+:::
 
 ### Configure IntelliSense
 
