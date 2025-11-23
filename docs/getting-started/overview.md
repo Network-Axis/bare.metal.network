@@ -15,5 +15,3 @@ The course is structured into three main sections that cover <ins>*networking*</
 Throughout the course, each concept module is paired with hands-on labs.
 You'll get to practice configuring routers, bootstrapping clusters, writing eBPF code, and troubleshooting in realistic scenarios.
 By the end, you'll have end-to-end control over packet flow, with confidence in each component's performance and reliability.
-
-Let's get started with Section 1, where we tackle building a scalable IPv6 underlay network!
