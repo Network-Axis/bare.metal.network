@@ -1,0 +1,8 @@
+{
+  "label": "Architecture Decisions",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Architecture Decision Records (ADRs) documenting protocol choices and design decisions for bare metal Kubernetes networking."
+  }
+}
