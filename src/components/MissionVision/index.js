@@ -33,11 +33,13 @@ const FeatureList = [
     ),
   },
   {
+    // title: 'NO LEGACY PROTOCOLS',
     title: 'STANDARD PROTOCOLS',
     Svg: require('@site/static/img/stacks/step3-light.svg').default,
     description: (
       <>
-      Layer-3 Spine and Leaf topology, using IPv6, BGP, BFD, and ECMP.
+      The network architecture is created with modern protocols, reducing technical debt, which simplifies both maintenance and automation. Layer-3 Spine and Leaf topology, using IPv6, BGP, BFD, and ECMP.
+      The protocols are each chosen with a specific intention, reducing bloat and technical debt.
       </>
     ),
   },
