@@ -1,6 +1,6 @@
 {
   "label": "Course Overview",
-  "position": 1,
+  "position": 0,
   "link": {
     "type": "doc",
     "id": "getting-started/overview"

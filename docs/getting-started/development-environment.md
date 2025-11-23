@@ -1,20 +1,21 @@
 ---
-title: Setup an eBPF development environment on macOS
+title: Setup an eBPF Development Environment on macOS
 authors: [cassamajor]
 tags: [ebpf]
 keywords: [eBPF, OrbStack, VS Code, Intellisense, cloud-init, macOS, M1, M2, M3]
 description: Learn how to configure macOS for eBPF development
-image: ./img/image.png
-draft: true
+image: /img/ebpf/image.png
+sidebar_position: 1
 ---
 
-So you want to build an eBPF program, and you don't know where to start?
+So you want to build an eBPF program, and don't know where to start?
 
-In the following sections, you will learn:
-1. How to use cloud-init and OrbStack to create an Ubuntu virtual machine tailored towards eBPF development.
-2. How to configure VS Code to make writing eBPF programs a more enjoyable experience.
+Macs with Apple silicon lack the compatibility to compile eBPF bytecode natively, so a simple solution is to provision a Linux virtual machine with the necessary tools.
 
-Let's dive in!
+In the following sections, you will learn how to:
+1. Create an Ubuntu Virtual Machine
+2. Install dependencies to compile eBPF programs
+3. Configure VS Code to access Linux source code
 
 <!-- truncate -->
 
@@ -99,9 +100,20 @@ If you choose a distribution other than Ubuntu, you may need to update the packa
 ## Configure VS Code for eBPF Development
 ### Accessing header source code using IntelliSense
 
-VS Code can be configured to enable local development with headers, but we need to tell VS Code where to find these files.
+System Settings -> Privacy & Security -> Files & Folders. For Visual Studio Code, ensure access to Network Volumes is allowed.
 
-The filesystem of the virtual machine is mounted at the following location: `/Users/username/OrbStack/ebpf/`, where the username of the Mac user is `username`, and the name of the eBPF virtual machine is `ebpf`.
+VS Code can be configured to enable local development with headers (no red squiggly line), but we need to tell VS Code where to find these files.
+
+Configuring IntelliSense will allow you to view source files using the `Go to Definition` keyboard shortcut.
+Put your cursor on the code definition and press the keyboard shortcut.
+Alternatively, you can use <kbd>Command</kbd>+<kbd>Left Click</kbd> on the code definition.
+
+:::tip
+To view the keyboard shortcut, press <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and type `Go to Definition`.
+
+
+Two other helpful keyboard shortcuts are `Open Previous Editor` and `Open Next Editor`, which allow you to navigate back and forth betwen your code and the source code.
+:::
 
 ### Configure IntelliSense
 
@@ -109,7 +121,7 @@ With the VS Code Editor in focus, open the Command Pallette using the keyboard s
 
 In the search bar, begin typing `Edit Configurations`, and select the option that says `C/C++ Edit Configurations (JSON)`.
 This will create/modify the `.vscode/c_cpp_properties.json` file.
-Copy and paste the following snippet:
+Copy and paste the following snippet, and save the file by pressing <kbd>Command</kbd>+<kbd>S</kbd>:
 
 ```json title=".vscode/c_cpp_properties.json"
 {
@@ -135,7 +147,7 @@ Copy and paste the following snippet:
 <summary> Configuration Breakdown </summary>
 - `name`: A label for this configuration.
 ---
-- `includePath`: A list of folders where IntelliSense will look for header files.
+- `includePath`: A list of folders where IntelliSense will look for header files. The filesystem of the virtual machine is mounted at the following location: `/Users/username/OrbStack/ebpf/`, where the username of the Mac user is `username`, and the name of the eBPF virtual machine is `ebpf`.
 `${workspaceFolder}/**` Recursively includes all directories inside the current project.
 ---
 - `compilerPath`: Path to the compiler binary used for parsing and IntelliSense.
@@ -148,9 +160,6 @@ Copy and paste the following snippet:
 ---
 - `version`: Schema version of the configuration file.
 </details>
-
-If you do not have `Auto Save` enabled (File > Auto Save), then save the file by pressing <kbd>Command</kbd>+<kbd>S</kbd>.
-You should now be able to view source files using <kbd>Command</kbd>+<kbd>Left Click</kbd>, or put your cursor on the code definition and press <kbd>Command</kbd>+<kbd>Down Arrow</kbd>.
 
 ## Common Issues and Fixes
 ### Finding Missing Headers on the Filesystem
