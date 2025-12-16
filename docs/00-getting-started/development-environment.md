@@ -30,7 +30,7 @@ Using cloud-init enables developers to configure machines in a consistent, repea
 [OrbStack](https://orbstack.dev) is a lightweight virtualization and container management tool for macOS, designed to make running Linux environments fast, easy, and seamless.
 It combines the simplicity of Docker Desktop with the power of a full Linux virtual machine, all while being native to Apple Silicon (M1/M2) and extremely efficient on system resources.
 
-One of the greatest features which enables seamless development is that OrbStack supports two-way file sharing between virtual machines and macOS. We will explain why this is a powerful tool for development [when we configure VS Code](#configure-vs-code-for-ebpf-development).
+One of the greatest features which enables seamless development is that OrbStack supports two-way file sharing between virtual machines and macOS. This is a powerful feature that will allow VS Code to [access Linux kernel headers](#access-linux-kernel-headers) from within the IDE once [Intellisense is configured](#configure-intellisense).
 
 ### What is Virtual Studio Code?
 [Virtual Studio Code](https://code.visualstudio.com/), commonly referred to as VS Code, is an Integrated Development Environment (IDE) that makes it easy to write, read, and debug code.
@@ -71,7 +71,7 @@ runcmd:
 ---
 - `runcmd`: Run arbitrary commands to create symbolic links.
 You may have noticed we are using relative symlinks rather than absolute symlinks.
-This will enable us to access header source code in the IDE, as [described in a later section](#accessing-header-source-code-using-intellisense).
+This will enable us to access header source code in the IDE, as [described in a later section](#configure-intellisense).
 
 </details>
 
@@ -102,46 +102,15 @@ If you choose a distribution other than Ubuntu, you may need to update the packa
 - `cloud-init.yaml` is the path to the cloud-init user data file we just created
 </details>
 
-## Install VS Code
-1. Download and Install VS Code through [Homebrew](https://brew.sh) (`brew install visual-studio-code`) or the [official website](https://code.visualstudio.com/docs/?dv=osx).
-2. You will be required to run the following commands within your terminal:
+## Configure VS Code for eBPF Development
+Install the [Go](https://marketplace.cursorapi.com/items?itemName=golang.go) and [CPPTools](ttps://marketplace.cursorapi.com/items?itemName=ms-vscode.cpptools) extensions. In your terminal, run:
 ```shell
-xcode-select —install
-code --install-extension golang.go # https://marketplace.cursorapi.com/items?itemName=golang.go
-code --install-extension ms-vscode.cpptools # https://marketplace.cursorapi.com/items?itemName=ms-vscode.cpptools
+code --install-extension golang.go
+code --install-extension ms-vscode.cpptools
 ```
 
-<details>
-<summary> Command Breakdown </summary>
-- `xcode-select —install` is used to manage OrbStack and its machines.
----
-- `code --install-extension golang.go` will create a new machine
----
-- `code --install-extension ms-vscode.cpptools`
-</details>
-
-## Configure VS Code for eBPF Development
-### Ensure VS Code has access to Network Volumes is allowed
-1. Open Spotlight using <kbd>Command</kbd>+<kbd>Space</kbd>. Enter in `Privacy & Security`.
-2. Select Files & Folders
-3. Look for Visual Studio Code
-4. Enable access to Network Volumes
-
-### Accessing header source code using IntelliSense
-VS Code can be configured to enable local development with headers (no red squiggly line), but we need to tell VS Code where to find these files.
-
-Configuring IntelliSense will allow you to view source files using the `Go to Definition` keyboard shortcut.
-Put your cursor on the code definition and press the keyboard shortcut.
-Alternatively, you can use <kbd>Command</kbd>+<kbd>Left Click</kbd> on the code definition.
-
-:::tip
-To view the keyboard shortcut, press <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and type `Go to Definition`.
-
-
-Two other helpful keyboard shortcuts are `Open Previous Editor` and `Open Next Editor`, which allow you to navigate back and forth betwen your code and the source code.
-:::
-
 ### Configure IntelliSense
+We can view Linux kernel headers once we tell VS Code these files reside in the Orbstack virtual machine.
 
 With the VS Code Editor in focus, open the Command Pallette using the keyboard shortcut <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.
 
@@ -186,6 +155,19 @@ Copy and paste the following snippet, and save the file by pressing <kbd>Command
 ---
 - `version`: Schema version of the configuration file.
 </details>
+
+### Enable Access to Network Volumes
+1. Open Spotlight using <kbd>Command</kbd>+<kbd>Space</kbd>. Enter in `Privacy & Security`.
+2. Select Files & Folders
+3. Look for Visual Studio Code
+4. Enable access to Network Volumes
+
+### Access Linux Kernel Headers
+To view the keyboard shortcut, press <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and type `Go to Definition`.
+
+To activate the shortcut, you must first place your cursor on the code definition. Alternatively, you can use <kbd>Command</kbd>+<kbd>Left Click</kbd> on the code definition.
+
+Two other helpful keyboard shortcuts are `Open Previous Editor` and `Open Next Editor`, which allow you to navigate back and forth betwen your code and the source code.
 
 ## Common Issues and Fixes
 ### Finding Missing Headers on the Filesystem
