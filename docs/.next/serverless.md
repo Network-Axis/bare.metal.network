@@ -1,0 +1,9 @@
+- CI/CD for deploying eBPF programs (including CNFs)
+- Orchestration and Serverless solutions
+	- WASM: https://www.youtube.com/watch?v=zvN9tuyqYow
+		- https://spinframework.dev/
+		- https://www.fermyon.dev/
+		- https://www.fermyon.com/
+		- https://www.spinkube.dev/
+- How to implement Service Function Chaining to create a Serverless framework
+- Decouple infrastructure configuration from application logic
