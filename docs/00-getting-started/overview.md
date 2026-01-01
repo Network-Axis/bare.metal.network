@@ -16,7 +16,3 @@ The course is structured into three main modules:
 Throughout the course, each concept module is paired with hands-on labs.
 You'll get to practice configuring routers, bootstrapping clusters, writing eBPF code, and troubleshooting in realistic scenarios.
 By the end, you'll have end-to-end control over packet flow, with confidence in each component's performance and reliability.
-
-
-Trifecta developer: Have a core understanding of eBPF use cases that span principles of software, networking, and infrastructure.
-This course is designed to teach Engineers how to approach eBPF from a Software, Networking, and Infrastructure perspective.

@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 So here is a list of reasons why I’ve decided to build NaaS on top of Kubernetes:
 
 I can define arbitrary APIs (via custom resources) with whatever structure I like.
@@ -42,3 +46,6 @@ support.
 
 - Upstream Kubernetes: Talos Linux deploys upstream Kubernetes without API modifications and ensures full
 compatibility with the Kubernetes ecosystem. 
+
+1. Routing functionality will be distributed across worker nodes, taking advantage of the resiliency and scalability Kubernetes has to offer.
+2. If a node or pod crashes and is unable to recover, a new instance will be spun up in its place without losing packets.
