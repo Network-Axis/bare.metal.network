@@ -38,8 +38,7 @@ const FeatureList = [
     Svg: require('@site/static/img/stacks/step3-light.svg').default,
     description: (
       <>
-      The network architecture is created with modern protocols, reducing technical debt, which simplifies both maintenance and automation. Layer-3 Spine and Leaf topology, using IPv6, BGP, BFD, and ECMP.
-      The protocols are each chosen with a specific intention, reducing bloat and technical debt.
+        IPv6, BGP, BFD, and ECMP in a Layer 3 "Spine and Leaf" topology ensures the network is resilient to failure, simplifies network maintenance, and supports automation.
       </>
     ),
   },
