@@ -103,7 +103,10 @@ If you choose a distribution other than Ubuntu, you may need to update the packa
 </details>
 
 ## Configure VS Code for eBPF Development
-Install the [Go](https://marketplace.cursorapi.com/items?itemName=golang.go) and [CPPTools](ttps://marketplace.cursorapi.com/items?itemName=ms-vscode.cpptools) extensions. In your terminal, run:
+If you do not already have VS Code installed, you can download it from the [official website](https://code.visualstudio.com/docs/?dv=osx).
+
+Next, install the [Go](https://marketplace.cursorapi.com/items?itemName=golang.go) and [CPPTools](ttps://marketplace.cursorapi.com/items?itemName=ms-vscode.cpptools) extensions.
+In your terminal, run:
 ```shell
 code --install-extension golang.go
 code --install-extension ms-vscode.cpptools
@@ -175,7 +178,7 @@ Two other helpful keyboard shortcuts are `Open Previous Editor` and `Open Next E
 Typically, to install Linux headers, you would run `apt install linux-headers-$(uname -r)` in your terminal. 
 This does not work in an OrbStack Virtual Machine because it uses a custom kernel.
 This means there is no official distributed package for its headers.
-~~What I discovered is that~~ all kernel headers can be found in the `/usr/include/aarch64-linux-gnu` directory.
+What I discovered is that all kernel headers can be found in the `/usr/include/aarch64-linux-gnu` directory.
 
 While developing an eBPF program, we tend to look to open source examples, but we don’t always know the development environment.
 
@@ -183,7 +186,7 @@ For example, I've come across `#include <bpf_helpers.h>`; however, its location 
 
 To find the location of a missing header, run: `find /usr -name byteorder.h`, where `byteorder.h` is replaced with the name of the missing header file.
 
-Once the header file is found, update the `runcmd` instructions in [`cloud-init.yaml`](https://raw.githubusercontent.com/cassamajor/xcnf/refs/heads/main/config/cloud-init.yaml) to include a symbolic link, as demonstrated in the linked file.
+Once the header file is found, update the `runcmd` instructions in `cloud-init.yaml` to include a symbolic link, as demonstrated here:
 
 ```shell
 runcmd:

@@ -6,7 +6,7 @@ slug: /
 
 Welcome to **Bare Metal Networking for Private Clouds**!
 In this course, you'll learn to design and deploy a modern data center network from the ground up.
-The course is structured into three main modules:
+The course is structured into four modules:
 
 - **Network Architecture:** Understand the protocols required to implement a scalable Layer 3 data center, using "Spine and Leaf" for the network topology, IPv6 link-local addressing, unnumbered BGP sessions, ECMP routing, and BFD.
 - **Network Infrastructure:** Automate Kubernetes cluster provisioning with Talos Linux and integrate Cilium to align pod networking with the Layer 3 fabric, ultimately creating a Cloud-Native Router.
