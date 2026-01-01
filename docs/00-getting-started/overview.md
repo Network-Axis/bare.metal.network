@@ -10,7 +10,7 @@ The course is structured into three main modules:
 
 - **Network Architecture:** Understand the protocols required to implement a scalable Layer 3 data center, using "Spine and Leaf" for the network topology, IPv6 link-local addressing, unnumbered BGP sessions, ECMP routing, and BFD.
 - **Network Infrastructure:** Automate Kubernetes cluster provisioning with Talos Linux and integrate Cilium to align pod networking with the Layer 3 fabric, ultimately creating a Cloud-Native Router.
-- **Introduction to eBPF:** Learn the fundamentals of writing eBPF programs (kernel space) and eBPF applications (user space).
+- **Introduction to eBPF:** Learn the fundamentals of writing eBPF programs (kernel space) in C and eBPF applications (user space) in Go.
 - **Networking with eBPF:** Write, build, and deploy Cloud-Native Network Functions (CNFs) that intercept and manipulate network packets at scale. We will leverage **netkit**, the BPF-programmable network device, to achieve zero-overhead performance and service function chaining.
 
 Throughout the course, each concept module is paired with hands-on labs.
